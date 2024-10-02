@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model 
+    href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1500.sch"
+        schematypens="http://purl.oclc.org/dsdl/schematron"?>
+        <?xml-model 
+            href="http://pds.nasa.gov/pds4/mission/insight/v1/PDS4_INSIGHT_1000.sch"
+                schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<Product_Ancillary 
+    xmlns="http://pds.nasa.gov/pds4/pds/v1"
+        xmlns:insight="http://pds.nasa.gov/pds4/mission/insight/v1"
+            xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    
+    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1  
+                            http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1500.xsd
+                                
+                        http://pds.nasa.gov/pds4/mission/insight/v1
+                                                http://pds.nasa.gov/pds4/mission/insight/v1/PDS4_INSIGHT_1000.xsd">
+    <Identification_Area>
+        <logical_identifier>urn:nasa:pds:insight_rise_raw:trk223_troposphere:product_id</logical_identifier>
+        <version_id>1.0</version_id>
+        <title>DSN Media Calibration (TRK 2-23) Sample Labels</title>
+        <information_model_version>1.5.0.0</information_model_version>
+        <product_class>Product_Ancillary</product_class>
+        <Modification_History>
+            <Modification_Detail>
+                <modification_date>2015-06-29</modification_date>
+                <version_id>1.0</version_id>
+                <description>
+                    initial creation of PDS4 label for TRK 2-23 DSN media calibration interface ASCII file
+                </description>
+            </Modification_Detail>
+        </Modification_History>
+    </Identification_Area>
+
+    <Context_Area>
+        <Time_Coordinates>
+            <start_date_time>2008-01-15T15:41:18Z</start_date_time>
+            <stop_date_time>2008-01-16T15:30:00Z</stop_date_time>
+        </Time_Coordinates>
+        <Primary_Result_Summary>
+            <purpose>Science</purpose>
+            <processing_level>Raw</processing_level>
+            <description>
+    This Deep Space Network (DSN) interface module specifies the format 
+    and content of the media calibration data that are provided by the 
+    Radiometric Modeling and Calibration Subsystem (RMC). These 
+    calibrations are used by project navigation and radio science 
+    teams, multi-mission spacecraft navigation, and other investigators 
+    (hereafter collectively referred to as users) to improve the accuracy 
+    of spacecraft orbit determination and radio science investigations by 
+    compensating for the media transmission effects of the Earth’s 
+    troposphere and ionosphere on the propagation of radiometric signals.
+    The calibration data products are documented in:
+
+                              820-013
+                   Deep Space Mission System (DSMS)
+                   External Interface Specification
+                            JPL D-16765
+                             TRK-2-23
+                     Media Calibration Interface
+                      Jet Propulsion Laboratory
+                        4800 Oak Grove Drive
+                      Pasadena, CA  91109-8099
+            </description>
+        </Primary_Result_Summary>
+        <Investigation_Area>
+            <name>InSight</name>
+            <type>Mission</type>
+            <Internal_Reference>
+                <lidvid_reference>urn:nasa:pds:context:investigation:mission.insight::1.0</lidvid_reference>
+                <reference_type>data_to_investigation</reference_type>
+            </Internal_Reference>
+        </Investigation_Area>
+        <Observing_System>
+            <name>InSight</name>
+            <Observing_System_Component>
+                <name>NSYT</name>
+                <type>Spacecraft</type>
+                <description>instrument_host InSight</description>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.insight</lid_reference>
+                    <reference_type>is_instrument_host</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+            <Observing_System_Component>
+                <name>RISE</name>
+                <type>Instrument</type>
+                <description>Rotation and Interior Structure Experiment</description>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument:rise.insight</lid_reference>
+                    <reference_type>is_instrument</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+        </Observing_System>
+        <Target_Identification>
+            <name>Mars</name>
+            <type>Planet</type>
+            <Internal_Reference>
+                <lidvid_reference>urn:nasa:pds:context:target:target.mars::1.0</lidvid_reference>
+                <reference_type>data_to_target</reference_type>
+            </Internal_Reference>
+        </Target_Identification>
+        <!-- ============================================================ -->
+        <!-- Reference the attributes that were imported from the         -->
+        <!-- InSight mission dictionary                                   -->
+        <!-- ============================================================ -->
+        <Mission_Area>
+            <insight:Observation_Information>
+                <insight:release_number>9999</insight:release_number>
+                <insight:mission_phase_name>SURFACE MISSION</insight:mission_phase_name>
+                <insight:product_type>TRO</insight:product_type>
+            </insight:Observation_Information>
+            <!-- The following optional elements of Observation_Information -->
+            <!-- were omitted; are any of these applicable?                 -->
+            <!-- spacecraft_clock_start_count                               -->
+            <!-- spacecraft_clock_stop_count                                -->
+            <!-- spacecraft_clock_count_partition                           -->
+            <!-- sol_number OR (start_sol_number AND stop_sol_number)       -->
+            <!-- start_local_mean_solar_time                                -->
+            <!-- stop_local_mean_solar_time                                 -->
+            <!-- local_mean_solar_time_sol                                  -->
+            <!-- local_true_solar_time_sol                                  -->
+            <!-- start_solar_longitude                                      -->
+            <!-- stop_solar_longitude                                       -->
+            <!-- observation_id                                             -->
+            <!-- sequence_id                                                -->
+            <!-- sequence_version_id                                        -->
+            <!-- software_name                                              -->
+            <!-- software_version_id                                        -->
+        </Mission_Area>
+    </Context_Area>
+
+    <Reference_List>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:insight_rise_raw:trk234_trknav</lid_reference>
+            <reference_type>ancillary_to_data</reference_type>
+        </Internal_Reference>
+    </Reference_List>   
+
+    <File_Area_Ancillary>
+        <File>
+            <file_name>nsyt_maro_2011_182_2011_213.tro</file_name>
+            <local_identifier>media_calibration_csp_records</local_identifier>
+            <creation_date_time>2011-08-01T03:00:00Z</creation_date_time>
+            <file_size unit="byte">155678</file_size>
+            <records>2953</records>
+            <md5_checksum>abd1be7e4609d4dd0fc19bb3878dacf5</md5_checksum>
+        </File>
+        <Stream_Text>
+            <offset unit="byte">0</offset>
+            <parsing_standard_id>7-Bit ASCII Text</parsing_standard_id>
+            <record_delimiter>Carriage-Return Line-Feed</record_delimiter>
+        </Stream_Text>
+    </File_Area_Ancillary>
+</Product_Ancillary>

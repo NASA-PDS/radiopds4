@@ -1,0 +1,820 @@
+
+        <Table_Binary>
+            <local_identifier>trk_TableBinary_SFDU_04</local_identifier>
+            <offset unit="byte">0</offset>
+            <records>1</records>
+            <Record_Binary>
+                <fields>101</fields>
+                <groups>0</groups>
+                <record_length unit="byte">296</record_length>
+                <Field_Binary>
+                    <name>control_auth_id</name>
+                    <field_number>1</field_number>
+                    <field_location unit="byte">1</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <description>Control authority identifier. ;  NJPL  indicates that the data description information for this SFDU is maintained and disseminated by NASA/JPL.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>sfdu_version_id</name>
+                    <field_number>2</field_number>
+                    <field_location unit="byte">5</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>SFDU label version ID.;  2  indicates that the length attribute field in bytes 12 to 19 is formatted as a binary unsigned integer.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>sfdu_class_id</name>
+                    <field_number>3</field_number>
+                    <field_location unit="byte">6</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>SFDU class ID.;  I  indicates that this SFDU contains data to be used by an application process.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>reserve2</name>
+                    <field_number>4</field_number>
+                    <field_location unit="byte">7</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Reserved.; Two bytes.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>data_description_id</name>
+                    <field_number>5</field_number>
+                    <field_location unit="byte">9</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <description>Data description identifier.; Uniquely identifies the data description information held by the control authority identified in the  Control authority identifier  item for this type of SFDU.; C123 => Uplink types; C124 => Downlink types; C125 => Derived types; C126 => Interferometric types; C127 => Filtered types</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>sfdu_length</name>
+                    <field_number>6</field_number>
+                    <field_location unit="byte">13</field_location>
+                    <data_type>UnsignedMSB8</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>Length attribute of the tracking data SFDU.; Indicates the length of the data following this element.; DT0 => 162; DT1 => 358 ; DT2 => 194 ; DT3 => 304 ; DT4 => 276 ; DT5 => 388 ; DT6 => 200; DT7 => 330; DT8 => 178 ; DT9 => 124; DT10 => 204 ; DT11 => 182; DT12 => 164 ; DT13 => 160; DT14 => 348; DT15 => 194; DT16 => 182 + 18 * num_obs; DT17 => 194 + 22 * num_obs</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>chdo_type</name>
+                    <field_number>7</field_number>
+                    <field_location unit="byte">21</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Type attribute of the aggregation CHDO.; A value of 1 indicates that this CHDO is an aggregation of CHDOs</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>chdo_length</name>
+                    <field_number>8</field_number>
+                    <field_location unit="byte">23</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Length attribute of the aggregation CHDO.; Indicates the length of the sum of the primary and secondary CHDOs.; CHDO 132 => 78; CHDO 133 => 122; CHDO 134 => 136; CHDO 135 => 100; CHDO 136 => 110</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>chdo_type</name>
+                    <field_number>9</field_number>
+                    <field_location unit="byte">25</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Type attribute of the primary CHDO.; A value of 2 indicates that this CHDO is a primary CHDO.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>chdo_length</name>
+                    <field_number>10</field_number>
+                    <field_location unit="byte">27</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Length attribute of the primary CHDO.  Indicates the length, in bytes, of the value field (bytes after this item) of the primary CHDO.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>mjr_data_class</name>
+                    <field_number>11</field_number>
+                    <field_location unit="byte">29</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Major data class.; A value of 6 indicates that the data in this SFDU is ground station monitor data.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>mnr_data_class</name>
+                    <field_number>12</field_number>
+                    <field_location unit="byte">30</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Minor data class.; Indicates data is processed tracking data.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>mission_id</name>
+                    <field_number>13</field_number>
+                    <field_location unit="byte">31</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Mission ID.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>format_code</name>
+                    <field_number>14</field_number>
+                    <field_location unit="byte">32</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Format code.; Also referred to as the data type.;   0  =>  Uplink Carrier Phase;   1  =>  Downlink Carrier Phase;   2  =>  Uplink Sequential Ranging Phase;   3  =>  Downlink Sequential Ranging Phase;   4  =>  Uplink PN Ranging Phase;   5  =>  Downlink PN Ranging Phase;   6  =>  Doppler;   7  =>  Sequential Ranging;   8  =>  Angles;   9  =>  Ramps ; 10  =>  VLBI; 11  =>  DRVID ; 12  =>  Smoothed Noise; 13  =>  Allan Deviation; 14  =>  PN Ranging; 15  =>  Tone Ranging; 16  =>  Carrier Observable; 17  =>  Total Phase Observable</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>chdo_type</name>
+                    <field_number>15</field_number>
+                    <field_location unit="byte">33</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Type attribute of the secondary CHDO.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>chdo_length</name>
+                    <field_number>16</field_number>
+                    <field_location unit="byte">35</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Length attribute of the secondary CHDO.  Indicates the length, in bytes, of the value field (bytes after this item) of the secondary CHDO.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>orig_id</name>
+                    <field_number>17</field_number>
+                    <field_location unit="byte">37</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Originator ID.; Indicates where this SFDU was originated. </description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>last_modifier_id</name>
+                    <field_number>18</field_number>
+                    <field_location unit="byte">38</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Last modifier ID.; Indicates where the contents of this SFDU were last modified. </description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>reserve1</name>
+                    <field_number>19</field_number>
+                    <field_location unit="byte">39</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Reserved.  ; For future expansion of scft_id.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>scft_id</name>
+                    <field_number>20</field_number>
+                    <field_location unit="byte">40</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Spacecraft number.;</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>upl_rec_seq_num</name>
+                    <field_number>21</field_number>
+                    <field_location unit="byte">41</field_location>
+                    <data_type>UnsignedMSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <description>Uplink record sequence number (UPL RSN).; This is the record sequence number reported by the uplink subsystem (UPL) equipment.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>rec_seq_num</name>
+                    <field_number>22</field_number>
+                    <field_location unit="byte">45</field_location>
+                    <data_type>UnsignedMSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <description>Record sequence number (RSN).; Begins with zero; increments by one for each successive uplink tracking SFDU of the same data type; wraps around from 232-1 to zero. Value is reset to zero when the data processing system software is restarted.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>year</name>
+                    <field_number>23</field_number>
+                    <field_location unit="byte">49</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Time tag year.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>doy</name>
+                    <field_number>24</field_number>
+                    <field_location unit="byte">51</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Time tag day of year.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>sec</name>
+                    <field_number>25</field_number>
+                    <field_location unit="byte">53</field_location>
+                    <data_type>IEEE754MSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>Time tag seconds of day.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>rct_day</name>
+                    <field_number>26</field_number>
+                    <field_location unit="byte">61</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Record creation time days.; Days since 1/1/1958.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>rct_msec</name>
+                    <field_number>27</field_number>
+                    <field_location unit="byte">63</field_location>
+                    <data_type>UnsignedMSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <description>Record creation time milliseconds of day.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ul_dss_id</name>
+                    <field_number>28</field_number>
+                    <field_location unit="byte">67</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Uplink antenna number.  ;</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ul_band</name>
+                    <field_number>29</field_number>
+                    <field_location unit="byte">68</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Uplink frequency band.; 0 => Unknown; 1 => S-band; 2 => X-band; 3 => Ka-band; 4 => Ku-band; 5 => L-band</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ul_assembly_num</name>
+                    <field_number>30</field_number>
+                    <field_location unit="byte">69</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Uplink Assembly Number.  ; Note that this is to allow for potential future cases where there might be more than one uplink of the same band at the same antenna.; 0 => Invalid/unknown; 1 => S-/X-band uplink; 2 => Ka-band uplink</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>transmit_num</name>
+                    <field_number>31</field_number>
+                    <field_location unit="byte">70</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Transmitter number.  ; Value depends on transmitter used.  A value of 0 indicates unknown.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>transmit_stat</name>
+                    <field_number>32</field_number>
+                    <field_location unit="byte">71</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Transmit status.; 0 => Not transmitting out the horn; 1 => Transmitting out the horn; 2 => Invalid/unknown</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>transmit_mode</name>
+                    <field_number>33</field_number>
+                    <field_location unit="byte">72</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Transmitter mode.; 0 => Low power; 1 => High power; 2 => Invalid/unknown</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>cmd_modul_stat</name>
+                    <field_number>34</field_number>
+                    <field_location unit="byte">73</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Command modulation status.; 0 => OFF; 1 => ON; 2 => Invalid/unknown</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>rng_modul_stat</name>
+                    <field_number>35</field_number>
+                    <field_location unit="byte">74</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Ranging modulation status.; 0 => OFF; 1 => ON; 2 => Invalid/unknown</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>fts_vld_flag</name>
+                    <field_number>36</field_number>
+                    <field_location unit="byte">75</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Frequency and Timing (FTS) validity.; 0 => Equipment is not synced with FTS; 1 => Equipment is synced with FTS</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>reserve1a</name>
+                    <field_number>37</field_number>
+                    <field_location unit="byte">76</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Reserved.; One byte.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>transmit_time_tag_delay</name>
+                    <field_number>38</field_number>
+                    <field_location unit="byte">77</field_location>
+                    <data_type>IEEE754MSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>Transmit time tag delay.  ; Value used to offset uplink time tag (e.g., for Goldstone Beam Waveguide antennas).  Value of ?1.0 indicates invalid (or not provided).</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ul_zheight_corr</name>
+                    <field_number>39</field_number>
+                    <field_location unit="byte">85</field_location>
+                    <data_type>IEEE754MSBSingle</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <description>Uplink Z-height correction. ; Value of -99.0 indicates invalid.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>mod_day</name>
+                    <field_number>40</field_number>
+                    <field_location unit="byte">89</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Modification time days.; Days since 1/1/1958.  Last modification time.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>mod_msec</name>
+                    <field_number>41</field_number>
+                    <field_location unit="byte">91</field_location>
+                    <data_type>UnsignedMSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <description>Modification time milliseconds of day. ; Last modification time.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>version_num</name>
+                    <field_number>42</field_number>
+                    <field_location unit="byte">95</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Version number.; Version number of the assembly that generated the data.  </description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>sub_version_num</name>
+                    <field_number>43</field_number>
+                    <field_location unit="byte">96</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Sub-version number.; Sub-version number of the assembly that generated the data.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>sub_sub_version_num</name>
+                    <field_number>44</field_number>
+                    <field_location unit="byte">97</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Sub-sub-version number.; Sub-sub-version number of the assembly that generated the data.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>reserve1b</name>
+                    <field_number>45</field_number>
+                    <field_location unit="byte">98</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Reserved.; One byte.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>reserve4</name>
+                    <field_number>46</field_number>
+                    <field_location unit="byte">99</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <description>Reserved.; Four bytes.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>chdo_type</name>
+                    <field_number>47</field_number>
+                    <field_location unit="byte">103</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Type attribute of the uplink PN ranging phase data CHDO.; CHDO contains binary data.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>chdo_length</name>
+                    <field_number>48</field_number>
+                    <field_location unit="byte">105</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Length attribute of the uplink PN ranging phase data CHDO value field.; Number of bytes after this item.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>stn_cal</name>
+                    <field_number>49</field_number>
+                    <field_location unit="byte">107</field_location>
+                    <data_type>IEEE754MSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>Station calibration value. (Two?way).  Value includes the equipment in the path, but not the Z-height correction. (0.0 if not measured.)</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ul_stn_cal</name>
+                    <field_number>50</field_number>
+                    <field_location unit="byte">115</field_location>
+                    <data_type>IEEE754MSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>Uplink station calibration value.  ; Value includes the uplink equipment in the path, but not the Z-height correction. (0.0 if not measured.)</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ul_cal_freq</name>
+                    <field_number>51</field_number>
+                    <field_location unit="byte">123</field_location>
+                    <data_type>IEEE754MSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>Uplink calibration frequency.  Frequency at which the calibration was done.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>cal_std_dev</name>
+                    <field_number>52</field_number>
+                    <field_location unit="byte">131</field_location>
+                    <data_type>IEEE754MSBSingle</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <description>Standard deviation of station calibration value.; For stn_cal and ul_stn_cal.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>cal_pts</name>
+                    <field_number>53</field_number>
+                    <field_location unit="byte">135</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Calibration points.  ; Number of measurements made in computing station calibration values (stn_cal, ul_stn_cal, and cal_std_dev).</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ul_rng_phs</name>
+                    <field_number>54</field_number>
+                    <field_location unit="byte">137</field_location>
+                    <data_type>IEEE754MSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>Measured range phase.; Range phase.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>state_subcode1</name>
+                    <field_number>55</field_number>
+                    <field_location unit="byte">145</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Subcode #1 code state.  ; Position in the subcode at the time tag.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>state_subcode2</name>
+                    <field_number>56</field_number>
+                    <field_location unit="byte">146</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Subcode #2 code state.  ; Position in the subcode at the time tag.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>state_subcode3</name>
+                    <field_number>57</field_number>
+                    <field_location unit="byte">147</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Subcode #3 code state.  ; Position in the subcode at the time tag.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>state_subcode4</name>
+                    <field_number>58</field_number>
+                    <field_location unit="byte">148</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Subcode #4 code state.  ; Position in the subcode at the time tag.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>state_subcode5</name>
+                    <field_number>59</field_number>
+                    <field_location unit="byte">149</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Subcode #5 code state.  ; Position in the subcode at the time tag.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>state_subcode6</name>
+                    <field_number>60</field_number>
+                    <field_location unit="byte">150</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Subcode #6 code state.  ; Position in the subcode at the time tag.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>pn_clk_phs</name>
+                    <field_number>61</field_number>
+                    <field_location unit="byte">151</field_location>
+                    <data_type>IEEE754MSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>PN chip clock phase.  ; Position in the chip at the time tag.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>transmit_switch_stat</name>
+                    <field_number>62</field_number>
+                    <field_location unit="byte">159</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Transmitter switch status.; 0 => Antenna; 1 => Water load; 2 => Invalid/unknown</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>invert</name>
+                    <field_number>63</field_number>
+                    <field_location unit="byte">160</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Invert.  ; Polarity of modulation signal.; 0 => Not inverted; 1 => Inverted</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>transmit_op_pwr</name>
+                    <field_number>64</field_number>
+                    <field_location unit="byte">161</field_location>
+                    <data_type>IEEE754MSBSingle</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <description>Transmitter output power.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>template_id</name>
+                    <field_number>65</field_number>
+                    <field_location unit="byte">165</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">22</field_length>
+                    <description>Template ID. ; Ranging configuration file ID, or the name of the PN pattern.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>chip_rate</name>
+                    <field_number>66</field_number>
+                    <field_location unit="byte">187</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>; Chip Rate.; The PN pattern chip rate in Megachips/sec, rounded down. </description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>len_subcode1</name>
+                    <field_number>67</field_number>
+                    <field_location unit="byte">188</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>SequenceSubcode #1 length.; A value of 0 implies no subcode.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>len_subcode2</name>
+                    <field_number>68</field_number>
+                    <field_location unit="byte">189</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Subcode #2 length.; A value of 0 implies no subcode.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>len_subcode3</name>
+                    <field_number>69</field_number>
+                    <field_location unit="byte">190</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Subcode #3 length.; A value of 0 implies no subcode.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>len_subcode4</name>
+                    <field_number>70</field_number>
+                    <field_location unit="byte">191</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Subcode #4 length.; A value of 0 implies no subcode.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>len_subcode5</name>
+                    <field_number>71</field_number>
+                    <field_location unit="byte">192</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Subcode #5 length.; A value of 0 implies no subcode.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>len_subcode6</name>
+                    <field_number>72</field_number>
+                    <field_location unit="byte">193</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Subcode #6 length.; A value of 0 implies no subcode.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>op_subcode1</name>
+                    <field_number>73</field_number>
+                    <field_location unit="byte">194</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Operation #1.; Logical operation between the accumulated pattern and the next subcode.; 0 => AND; 1 => OR; 2 => XOR; 3 => Weighted Vote, weight = 1; 4 => Weighted Vote, weight = 2; 5 => Weighted Vote, weight = 3; 6 => Weighted Vote, weight = 4; 7 => Weighted Vote, weight = 5; 8 => Weighted Vote, weight = 6</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>op_subcode2</name>
+                    <field_number>74</field_number>
+                    <field_location unit="byte">195</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Operation #2.; (See Item op_subcode1)</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>op_subcode3</name>
+                    <field_number>75</field_number>
+                    <field_location unit="byte">196</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Operation #3. ; (See Item op_subcode1)</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>op_subcode4</name>
+                    <field_number>76</field_number>
+                    <field_location unit="byte">197</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Operation #4. ; (See Item op_subcode1)</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>op_subcode5</name>
+                    <field_number>77</field_number>
+                    <field_location unit="byte">198</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Operation #5. ; (See Item op_subcode1)</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>def_subcode1</name>
+                    <field_number>78</field_number>
+                    <field_location unit="byte">199</field_location>
+                    <data_type>UnsignedMSB8</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>Subcode #1 component value.  ; Definition of the subcode.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>def_subcode2</name>
+                    <field_number>79</field_number>
+                    <field_location unit="byte">207</field_location>
+                    <data_type>UnsignedMSB8</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>Subcode #2 component value.  ; Definition of the subcode.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>def_subcode3</name>
+                    <field_number>80</field_number>
+                    <field_location unit="byte">215</field_location>
+                    <data_type>UnsignedMSB8</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>Subcode #3 component value.  ; Definition of the subcode.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>def_subcode4</name>
+                    <field_number>81</field_number>
+                    <field_location unit="byte">223</field_location>
+                    <data_type>UnsignedMSB8</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>Subcode #4 component value. ; Definition of the subcode.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>def_subcode5</name>
+                    <field_number>82</field_number>
+                    <field_location unit="byte">231</field_location>
+                    <data_type>UnsignedMSB8</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>Subcode #5 component value. ; Definition of the subcode.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>def_subcode6</name>
+                    <field_number>83</field_number>
+                    <field_location unit="byte">239</field_location>
+                    <data_type>UnsignedMSB8</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>Subcode #6 component value. ; Definition of the subcode.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>pn_code_length</name>
+                    <field_number>84</field_number>
+                    <field_location unit="byte">247</field_location>
+                    <data_type>UnsignedMSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <description>Code Length.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>transmit_inphs_time_year</name>
+                    <field_number>85</field_number>
+                    <field_location unit="byte">251</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Transmit In-phase time   year.; Year of the time of zero phase on uplink range generation.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>transmit_inphs_time_doy</name>
+                    <field_number>86</field_number>
+                    <field_location unit="byte">253</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Transmit In-phase time   day of year.; Day of year of the time of zero phase on uplink range generation.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>transmit_inphs_time_sec</name>
+                    <field_number>87</field_number>
+                    <field_location unit="byte">255</field_location>
+                    <data_type>IEEE754MSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>Transmit In-phase time   seconds of day.; Seconds of day of the time of zero phase on uplink range generation.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>carr_sup_rng_modul</name>
+                    <field_number>88</field_number>
+                    <field_location unit="byte">263</field_location>
+                    <data_type>IEEE754MSBSingle</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <description>Carrier Suppression by ranging modulation.; Reduction in carrier power due to ranging modulation.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>rng_modul_amp</name>
+                    <field_number>89</field_number>
+                    <field_location unit="byte">267</field_location>
+                    <data_type>UnsignedMSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <description>Ranging modulation amplitude.; Actual digital modulation amplitude used by the ranging hardware.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>exc_scalar_num</name>
+                    <field_number>90</field_number>
+                    <field_location unit="byte">269</field_location>
+                    <data_type>UnsignedMSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <description>Exciter Scalar Numerator.; Numerator of ratio between ranging reference signal and uplink sky frequency.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>exc_scalar_den</name>
+                    <field_number>91</field_number>
+                    <field_location unit="byte">273</field_location>
+                    <data_type>UnsignedMSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <description>Exciter Scalar Denominator.; Denominator of ratio between ranging reference signal anduplink sky frequency.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>rng_cycle_time</name>
+                    <field_number>92</field_number>
+                    <field_location unit="byte">277</field_location>
+                    <data_type>IEEE754MSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <description>Ranging cycle time.; Integration time for each PN range point. </description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>clock_waveform</name>
+                    <field_number>93</field_number>
+                    <field_location unit="byte">285</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Clock waveform type.; 0 => Squarewave; 1 => Sinewave</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>rng_meas_type</name>
+                    <field_number>94</field_number>
+                    <field_location unit="byte">286</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Range Measurement Type.; Type of PN measurement.; 0 => Ranging Round Trip; 1 => Calibration; 2 => Telemetry-Based Ranging; 3 => 1-way to Spacecraft; 4 => 1-way from Spacecraft; 5 => Coupled Noncoherent</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>time_tag_corr_flag</name>
+                    <field_number>95</field_number>
+                    <field_location unit="byte">287</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Time tag correction flag.; Indicates results of validation of the block time tag.; 0 => No validation attempted; 1 => Validated, no change; 2 => Validated, changed</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>type_time_corr_flag</name>
+                    <field_number>96</field_number>
+                    <field_location unit="byte">288</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Type of time tag correction flag.; Indicates what type of time tag correction was made.; 0 => No correction; 1 => Year correction; 2 => DOY correction; 3 => Both Year and DOY correction</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>fabricated_sfdu_flag</name>
+                    <field_number>97</field_number>
+                    <field_location unit="byte">289</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Fabricated SFDU Flag; Indicates whether this SFDU was artificially fabricated in support of 3-way ranging.; 0 => Originally generated by UPL and validated by TTC software; 1 => Fabricated by TTC software</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>op_subcode6</name>
+                    <field_number>98</field_number>
+                    <field_location unit="byte">290</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>Operation #6.; (See Item op_subcode1) ; </description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ccsds_k</name>
+                    <field_number>99</field_number>
+                    <field_location unit="byte">291</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>CCSDS PN Parameter K. ; Parameter K setting PN ranging chip rate.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ccsds_l</name>
+                    <field_number>100</field_number>
+                    <field_location unit="byte">292</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                    <description>CCSDS PN Parameter L.; Parameter L setting PN ranging chip rate.</description>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>reserve4</name>
+                    <field_number>101</field_number>
+                    <field_location unit="byte">293</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <description>Reserved.; Four bytes.</description>
+                </Field_Binary>
+
+            </Record_Binary>         
+        </Table_Binary>

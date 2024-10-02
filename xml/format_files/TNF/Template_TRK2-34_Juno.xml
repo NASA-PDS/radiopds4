@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1  https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.xsd">
+    <Identification_Area>
+        <logical_identifier>urn:nasa:pds:jno.rss.raw.jugr:data.tnf:product_id</logical_identifier>
+        <version_id>1.0</version_id>
+        <title>Juno TRK234 Labels</title>
+        <information_model_version>1.13.0.0</information_model_version>
+        <product_class>Product_Observational</product_class>
+        <Modification_History>
+            <Modification_Detail>
+                <modification_date>2017-10-20</modification_date>
+                <version_id>1.0</version_id>
+                <description>
+                    Label for TRK234 Data products
+                </description>
+            </Modification_Detail>
+        </Modification_History>
+    </Identification_Area>
+    <Observation_Area>
+        <comment>
+        </comment>
+        <Time_Coordinates>
+            <start_date_time>1900-01-01T00:00:00Z</start_date_time>
+            <stop_date_time>1900-01-01T00:00:01Z</stop_date_time>
+        </Time_Coordinates>
+        <Primary_Result_Summary>
+            <purpose>Science</purpose>
+            <processing_level>Raw</processing_level>
+            <description>
+    The TNF data type captures radiometric tracking data for delivery
+    to navigation and radio science users from the Telecommunications
+    Services at JPL.  The product replaces data types formerly known
+    as Orbit Data Files, Archival Tracking Data Files, and others.
+    Format and content of the TNF data product is documented in:
+
+                              820-013
+                   Deep Space Mission System (DSMS)
+                   External Interface Specification
+                            JPL D-16765
+                             TRK-2-34
+               DSMS Tracking System Data Archival Format
+                      Jet Propulsion Laboratory
+                        4800 Oak Grove Drive
+                      Pasadena, CA  91109-8099
+
+    Background information on the radiometric system may be found in:
+
+             Formulation for Observed and Computed Values
+           of Deep Space Network Data Types  for Navigation
+                         by Theodore D. Moyer
+                  JPL Publication 00-7, October 2000
+     Monograph 2, Deep Space Communications and Navigation Series
+                      Jet Propulsion Laboratory
+                        4800 Oak Grove Drive
+                      Pasadena, CA  91109-8099
+            </description>
+        </Primary_Result_Summary>
+
+        <Investigation_Area>
+            <name>JUNO</name>
+            <type>Mission</type>
+            <Internal_Reference>
+                <lid_reference>urn:nasa:pds:context:investigation:mission.juno</lid_reference>
+                <reference_type>data_to_investigation</reference_type>
+            </Internal_Reference>
+        </Investigation_Area>
+        <Observing_System>
+            <name>Juno Gravity Science</name>
+            <Observing_System_Component>
+                <name>JUNO</name>
+                <type>Spacecraft</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.jno</lid_reference>
+                    <reference_type>is_instrument_host</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+            <Observing_System_Component>
+                <name>GRAV</name>
+                <type>Instrument</type>
+                <description>Gravity Science Investigation</description>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument:juno.rss</lid_reference>
+                    <reference_type>is_instrument</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+        </Observing_System>
+        <Target_Identification>
+            <name>Earth</name>
+            <type>Planet</type>
+            <Internal_Reference>
+                <lid_reference>urn:nasa:pds:context:target:planet.earth</lid_reference>
+                <reference_type>data_to_target</reference_type>
+            </Internal_Reference>
+        </Target_Identification>
+        <Target_Identification>
+            <name>Jupiter</name>
+            <type>Planet</type>
+            <Internal_Reference>
+                <lid_reference>urn:nasa:pds:context:target:planet.jupiter</lid_reference>
+                <reference_type>data_to_target</reference_type>
+            </Internal_Reference>
+        </Target_Identification>
+    </Observation_Area>
+
+    <Reference_List>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:juno.rss.raw.jugr:document:juno_grav_sis</lid_reference>
+            <reference_type>data_to_document</reference_type>
+        </Internal_Reference>
+    </Reference_List>    
+
+    <File_Area_Observational>
+        <File>
+            <file_name>FILENAME</file_name>
+            <local_identifier>trk_TableBinary</local_identifier>
+            <creation_date_time>1900-01-01T00:00:00Z</creation_date_time>
+            <file_size unit="byte">0</file_size>
+            <records>0</records>
+            <md5_checksum>00</md5_checksum>
+        </File>
+
+        
+    </File_Area_Observational>
+</Product_Observational>
