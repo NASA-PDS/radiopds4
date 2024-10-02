@@ -1,295 +1,146 @@
-# PDS Template Repository for Python
+# pds4
+This set of scripts and associated libraries will create labels for Radio Science data products from NASA's Deep Space Network in Planetary Data System Version 4 (PDS4) XML format. This set labels:
+* Deep Space Network **TRK-2-34** Tracking and Navigation Data Files [^1] as *Product_Observational*
+* Deep Space Network **TRK-2-23** Media Calibration Data Files [^2] as *Product_Ancillary*
+* Deep Space Network **0222_Science** Open Loop Data Files [^3] as *Product_Observational* (under development, limited functionality)
+* Utility programs for manipulation of other PDS4 files
 
-This is the template repository for PDS's Python projects.
+These utilities are provided to the community by the Planetary Data System Radio Science Sub Node (RSSN) within the Planetary Radar and Radio Sciences Group (332K) at the Jet Propulsion Laboratory, California Institute of Technology.
 
-This repository aims at being a base for new python repositories used in PDS. It guides developers to ease the initialization of a project and recommends preferred options to standardize developments and ease maintenance. Simply click the <kbd>Use this template</kbd> button ↑ (or use [this hyperlink](https://github.com/NASA-PDS/pds-template-repo-python/generate)).
+## Requirements
+These utilities are written in Python. Although any version of Python 3 should work, the program was developed and tested under Python 3.6.8. Beyond the default libraries included in Python, the following are required depending on the data product:
+* [trk234](https://github.jpl.nasa.gov/rssg/trk234)
+* [rdef_0222sci](https://github.jpl.nasa.gov/rssg/rdef_0222sci)
 
+## Installation
 
-## 🏃 Getting Started With This Template
+This is a Python library package with scripts and configuration files.
 
-See our wiki page for more info on setting up your new repo. You can remove this section once you have completed the necessary start-up steps.
+The library  can be installed by cloning the repository to your local machine and running:
 
-https://github.com/NASA-PDS/nasa-pds.github.io/wiki/Git-and-Github-Guide#creating-a-new-repo
+```
+pip install \path\to\pds4
+```
 
-**👉 Important!** You must assign the teams as mentioned on the wiki page above! At a minimum, these are:
+Note the installation path. Add files from the `scripts/` directory to your execution path, and if using the `bin/` execution scripts, update the paths in the scripts appropriately.
 
-| Team                                | Permission |
-| ----------------------------------- | ---------- |
-| `@NASA-PDS/pds-software-committers` | `write`    |
-| `@NASA-PDS/pds-software-pmc`        | `admin`    |
-| `@NASA-PDS/pds-operations`          | `admin`    |
-
----
-
-# My Project
-
-This is the XYZ that does this, that, and the other thing for the Planetary Data System.
-
-Please visit our website at: https://nasa-pds.github.io/pds-my-project
-
-It has useful information for developers and end-users.
-
-## Prerequisites
-
-Include any system-wide requirements (`brew install`, `apt-get install`, `yum install`, …) **Python 3** should be used regardless as [Python 2 reached end-of-life on January 1st, 2020](https://pythonclock.org/).
-
-
-## User Quickstart
-
-Install with:
-
-    pip install my_pds_module
-
-If possible, make it so that your program works out of the box without any additional configuration—but see the [Configuration](###configuration) section for details.
-
-To execute, run:
-
-    (put your run commands here)
-
-
-## Code of Conduct
-
-All users and developers of the NASA-PDS software are expected to abide by our [Code of Conduct](https://github.com/NASA-PDS/.github/blob/main/CODE_OF_CONDUCT.md). Please read this to ensure you understand the expectations of our community.
-
-
-## Development
-
-To develop this project, use your favorite text editor, or an integrated development environment with Python support, such as [PyCharm](https://www.jetbrains.com/pycharm/).
-
-
-### Contributing
-
-For information on how to contribute to NASA-PDS codebases please take a look at our [Contributing guidelines](https://github.com/NASA-PDS/.github/blob/main/CONTRIBUTING.md).
-
-
-### Installation
-
-Install in editable mode and with extra developer dependencies into your virtual environment of choice:
-
-    pip install --editable '.[dev]'
-
-Make a baseline for any secrets (email addresses, passwords, API keys, etc.) in the repository:
-
-    detect-secrets scan . \
-        --all-files \
-        --disable-plugin AbsolutePathDetectorExperimental \
-        --exclude-files '\.secrets..*' \
-        --exclude-files '\.git.*' \
-        --exclude-files '\.mypy_cache' \
-        --exclude-files '\.pytest_cache' \
-        --exclude-files '\.tox' \
-        --exclude-files '\.venv' \
-        --exclude-files 'venv' \
-        --exclude-files 'dist' \
-        --exclude-files 'build' \
-        --exclude-files '.*\.egg-info' > .secrets.baseline
-
-Review the secrets to determine which should be allowed and which are false positives:
-
-    detect-secrets audit .secrets.baseline
-
-Please remove any secrets that should not be seen by the public. You can then add the baseline file to the commit:
-
-    git add .secrets.baseline
-
-Then, configure the `pre-commit` hooks:
-
-    pre-commit install
-    pre-commit install -t pre-push
-    pre-commit install -t prepare-commit-msg
-    pre-commit install -t commit-msg
-
-These hooks then will check for any future commits that might contain secrets. They also check code formatting, PEP8 compliance, type hints, etc.
-
-👉 **Note:** A one time setup is required both to support `detect-secrets` and in your global Git configuration. See [the wiki entry on Secrets](https://github.com/NASA-PDS/nasa-pds.github.io/wiki/Git-and-Github-Guide#detect-secrets) to learn how.
-
-
-### Packaging
-
-To isolate and be able to re-produce the environment for this package, you should use a [Python Virtual Environment](https://docs.python.org/3/tutorial/venv.html). To do so, run:
-
-    python -m venv venv
-
-Then exclusively use `venv/bin/python`, `venv/bin/pip`, etc.
-
-If you have `tox` installed and would like it to create your environment and install dependencies for you run:
-
-    tox --devenv <name you'd like for env> -e dev
-
-Dependencies for development are specified as the `dev` `extras_require` in `setup.cfg`; they are installed into the virtual environment as follows:
-
-    pip install --editable '.[dev]'
-
-All the source code is in a sub-directory under `src`.
-
-You should update the `setup.cfg` file with:
-
-- name of your module
-- license, default apache, update if needed
-- description
-- download url, when you release your package on github add the url here
-- keywords
-- classifiers
-- install_requires, add the dependencies of you package
-- extras_require, add the development Dependencies of your package
-- entry_points, when your package can be called in command line, this helps to deploy command lines entry points pointing to scripts in your package
-
-For the packaging details, see https://packaging.python.org/tutorials/packaging-projects/ as a reference.
-
+Copy the label templates and configuration from the `xml/` directory to a location of your choosing.
 
 ### Configuration
 
-It is convenient to use ConfigParser package to manage configuration. It allows a default configuration which can be overwritten by the user in a specific file in their environment. See https://pymotw.com/2/ConfigParser/
+For users with complicated Python environments or wish to simplify the installation, several `bash` scripts are provided in the `bin/` directory. In each of the files, edit the statement to point to the correct directory the library is installed:
 
-For example:
-
-    candidates = ['my_pds_module.ini', 'my_pds_module.ini.default']
-    found = parser.read(candidates)
-
-
-### Logs
-
-You should not use `print()`vin the purpose of logging information on the execution of your code. Depending on where the code runs these information could be redirected to specific log files.
-
-To make that work, start each Python file with:
-
-```python
-"""My module."""
-import logging
-
-logger = logging.getLogger(__name__)
+```
+# update pythonpath for the correct libraries
+export PYTHONPATH=$PYTHONPATH:/home/source/pds4
 ```
 
-To log a message:
+Also update the location of the scripts:
+```
+# add the path of the script install directory
+SCRIPTDIR=/home/source/pds4/scripts
+```
 
-    logger.info("my message")
+Optionally, for TRK-2-34 data files, set an environment variable to point to the label templates for TRK-2-34. If you do not do this, you will need to provide the location of the label templates each time as an option in the program. For example, inside your `.bashrc` profile:
 
-In your `main` routine, include:
+```
+RS_TRK234_DEFAULT_CONFIG=/home/apps/Linux-x86_64/share/PDS/PDS4/format_files/TNF/config/
+```
 
-    logging.basicConfig(level=logging.INFO)
+## Usage
 
-to get a basic logging system configured.
+### Architecture
 
+Each script takes a data file and an XML label template file. The XML template file contains everything already needed - the scripts will not add new metadata. The script will read the data file to get appropriate information to fill the label, and then write a label. Optionally, the script will rename the file according to a user specified naming convention with common attributes as variables (e.g. start time).
 
-### Tooling
+Scripts are in the `scripts/` directory. Each script uses a common `XML_Template` class and utilities from the `pds4/` library. Additional libraries are required for each data type and specified above in the Requirements section.
 
-The `dev` `extras_require` included in the template repo installs `black`, `flake8` (plus some plugins), and `mypy` along with default configuration for all of them. You can run all of these (and more!) with:
+Sample templates are provided in the `xml/` folder along with configuration files for the DSN TRK-2-34 data type.
 
-    tox -e lint
+### Label a TRK-2-34 Data File
 
+The script to label a DSN TRK-2-34 Tracking and Navigation Data File (sometimes referred to as *TNF* files) is called `pds4.trk234.py`. This script **requires** the [trk234](https://github.jpl.nasa.gov/rssg/trk234) library installed on the `PATH` or `PYTHONPATH` and the scripts in the `trk234/bin/` directory on the `PATH`.` This software will *reformat* the raw data file such that each data type is in ascending order for labeling by calling the `trk234_regroup` program from the `trk234` package.
 
-### Code Style
+Usage: `pds4.trk234.py [-h] -t TEMPLATE [-c CONFIG] [-r RENAME] [-o] [-q] Input`
 
-So that your code is readable, you should comply with the [PEP8 style guide](https://www.python.org/dev/peps/pep-0008/). Our code style is automatically enforced in via [black](https://pypi.org/project/black/) and [flake8](https://flake8.pycqa.org/en/latest/). See the [Tooling section](#-tooling) for information on invoking the linting pipeline.
+Basic Example: *label a TRK-2-34 data file using a template*
+```
+pds4.trk234.py -t /home/apps/Linux-x86_64/share/PDS/PDS4/format_files/TNF/Template_TRK2-34_Juno.xml GRV_JUGR_2023250_0445X14MC001V01.TNF
+```
 
-❗Important note for template users❗
-The included [pre-commit configuration file](.pre-commit-config.yaml) executes `flake8` (along with `mypy`) across the entire `src` folder and not only on changed files. If you're converting a pre-existing code base over to this template that may result in a lot of errors that you aren't ready to deal with.
+Complicated Example: *label a TRK-2-34 data file using a template, and also provide the config directory and rename the file at the same time*
+```
+pds4.trk234.py -t /home/apps/Linux-x86_64/share/PDS/PDS4/format_files/TNF/Template_TRK2-34_Juno.xml -c /home/apps/Linux-x86_64/share/PDS/PDS4/format_files/TNF/config/ 232511615SC61DSS35_noHdr.234 -r 'jnogrv_{start_year}{start_doy}_{start_time}_{uplink_band}{ul_dss_id}{dnlink_band}{dl_dss_id}_{count_time}_v01.dat'
+```
 
-You can instead execute `flake8` only over a diff of the current changes being made by modifying the `pre-commit` `entry` line:
+If you did not set the `RS_TRK234_DEFAULT_CONFIG` environment variable, *you must also provide the `-c` option*
 
-    entry: git diff -u | flake8 --diff
+### Label a TRK-2-23 Ancillary File
 
-Or you can change the `pre-commit` config so `flake8` is only called on changed files which match a certain filtering criteria:
+No additional libraries are required for the TRK-2-23 Media Calibration Interface files. These are sometimes referred to as Control Statement Processor (CSP) files, becuase the content of the data is written as pseudo-code in the CSP language, read by the JPL Orbit Determination Program (ODP) and the MONTE software. 
 
-    -   repo: local
-        hooks:
-        -   id: flake8
-            name: flake8
-            entry: flake8
-            files: ^src/|tests/
-            language: system
+To label a TRK-2-23 file, simply call the program and give a template file:
 
+Usage: `pds4.csp.py [-h] -t TEMPLATE [-r RENAME] Input`
 
-### Recommended Libraries
+Example: *label a TRK-2-23 CSP file, and rename it*
+```
+pds4.csp.py -r nsyt_maro_{start_year}_{start_doy}_{end_year}_{end_doy}_tro.csp -t /home/apps/Linux-x86_64/share/PDS/PDS4/format_files/TRO/Template_TRO_Final_InSight.xml tro.csp
+```
 
-Python offers a large variety of libraries. In PDS scope, for the most current usage we should use:
+### Label a 0222_Science Data File
 
-| Library      | Usage                                           |
-|--------------|------------------------------------------------ |
-| configparser | manage and parse configuration files            |
-| argparse     | command line argument documentation and parsing |
-| requests     | interact with web APIs                          |
-| lxml         | read/write XML files                            |
-| json         | read/write JSON files                           |
-| pyyaml       | read/write YAML files                           |
-| pystache     | generate files from templates                   |
+***This script is in development and is not fully vetted. Currently only validated for 1 kHz / 16-bit recordings.***
 
-Some of these are built into Python 3; others are open source add-ons you can include in your `requirements.txt`.
+The script to label a 0222_Science Open Loop Data File (sometimes referred to as OLR data, in the distant pass this data is analogous to RSR or ODR data), requires the use of the [rdef_0222sci](https://github.jpl.nasa.gov/rssg/rdef_0222sci) library on the `PATH` or `PYTHONPATH`. It is simple:
 
+Usage: `pds4.olr.py [-h] [-r RENAME] -t TEMPLATE Input`
 
-### Tests
-
-This section describes testing for your package.
-
-A complete "build" including test execution, linting (`mypy`, `black`, `flake8`, etc.), and documentation build is executed via:
-
-    tox
-
-
-#### Unit tests
-
-Your project should have built-in unit tests, functional, validation, acceptance, etc., tests.
-
-For unit testing, check out the [unittest](https://docs.python.org/3/library/unittest.html) module, built into Python 3.
-
-Tests objects should be in packages `test` modules or preferably in project 'tests' directory which mirrors the project package structure.
-
-Our unit tests are launched with command:
-
-    pytest
-
-If you want your tests to run automatically as you make changes start up `pytest` in watch mode with:
-
-    ptw
+Example: *label a 0222_Science file, and rename it*
+```
+pds4.olr -t /home/apps/Linux-x86_64/share/PDS/PDS4/format_files/OLR/Template_OLR_1kHz_16bit_Clipper_Draft.xml -r RSS999XXX{start_year}{start_doy}T{start_time}_{ul_band}{ul_dss_id}{dl_band}{dl_dss_id}{bw}KNJPL_OLR010.DAT polr1_ec_rs_atlo_rs_b.23_242_223228
+```
 
 
-#### Integration/Behavioral Tests
+## Disclaimer Statement
+Copyright (c) 2023, California Institute of Technology ("Caltech").
+U.S. Government sponsorship acknowledged. Any commercial use must be 
+negotiated with the Office of Technology Transfer at the California 
+Institute of Technology.
 
-One should use the `behave package` and push the test results to "testrail".
+This software may be subject to U.S. export control laws. By accepting this 
+software, the user agrees to comply with all applicable U.S. export laws 
+and regulations. User has the responsibility to obtain export licenses, or 
+other export authority as may be required before exporting such information 
+to foreign countries or providing access to foreign persons.
 
-See an example in https://github.com/NASA-PDS/pds-doi-service#behavioral-testing-for-integration--testing
+All rights reserved.
 
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
 
-### Documentation
+* Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+* Redistributions must reproduce the above copyright notice, this list of
+  conditions and the following disclaimer in the documentation and/or other
+  materials provided with the distribution.
+* Neither the name of Caltech nor its operating division, the Jet Propulsion
+  Laboratory, nor the names of its contributors may be used to endorse or
+  promote products derived from this software without specific prior written
+  permission.
 
-Your project should use [Sphinx](https://www.sphinx-doc.org/en/master/) to build its documentation. PDS' documentation template is already configured as part of the default build. You can build your projects docs with:
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
 
-    python setup.py build_sphinx
-
-You can access the build files in the following directory relative to the project root:
-
-    build/sphinx/html/
-
-
-## Build
-
-    pip install wheel
-    python setup.py sdist bdist_wheel
-
-
-## Publication
-
-NASA PDS packages can publish automatically using the [Roundup Action](https://github.com/NASA-PDS/roundup-action), which leverages GitHub Actions to perform automated continuous integration and continuous delivery. A default workflow that includes the Roundup is provided in the `.github/workflows/unstable-cicd.yaml` file. (Unstable here means an interim release.)
-
-
-### Manual Publication
-
-Create the package:
-
-    python setup.py bdist_wheel
-
-Publish it as a Github release.
-
-Publish on PyPI (you need a PyPI account and configure `$HOME/.pypirc`):
-
-    pip install twine
-    twine upload dist/*
-
-Or publish on the Test PyPI (you need a Test PyPI account and configure `$HOME/.pypirc`):
-
-    pip install twine
-    twine upload --repository testpypi dist/*
-
-## CI/CD
-
-The template repository comes with our two "standard" CI/CD workflows, `stable-cicd` and `unstable-cicd`. The unstable build runs on any push to `main` (± ignoring changes to specific files) and the stable build runs on push of a release branch of the form `release/<release version>`. Both of these make use of our GitHub actions build step, [Roundup](https://github.com/NASA-PDS/roundup-action). The `unstable-cicd` will generate (and constantly update) a SNAPSHOT release. If you haven't done a formal software release you will end up with a `v0.0.0-SNAPSHOT` release (see NASA-PDS/roundup-action#56 for specifics).
+[^1]: https://pds-geosciences.wustl.edu/radiosciencedocs/urn-nasa-pds-radiosci_documentation/dsn_trk-2-34/
+[^2]: https://pds-geosciences.wustl.edu/radiosciencedocs/urn-nasa-pds-radiosci_documentation/dsn_trk-2-23/
+[^3]: https://pds-geosciences.wustl.edu/radiosciencedocs/urn-nasa-pds-radiosci_documentation/dsn_0222-science/
