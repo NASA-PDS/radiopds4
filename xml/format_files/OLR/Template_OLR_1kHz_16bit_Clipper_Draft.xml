@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.sch"
+     schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model
+href="https://pds.nasa.gov/pds4/mission/clipper/v1/PDS4_CLIPPER_1B00_1840.sch"
+         schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<Product_Observational
+     xmlns="http://pds.nasa.gov/pds4/pds/v1"
+     xmlns:clipper="http://pds.nasa.gov/pds4/mission/clipper/v1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1
+     https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.xsd
+
+     http://pds.nasa.gov/pds4/mission/clipper/v1
+     https://pds.nasa.gov/pds4/mission/clipper/v1/PDS4_CLIPPER_1B00_1840.xsd">
+       <Identification_Area>
+             <logical_identifier>urn:nasa:pds:clipper.rss.raw:data.raw.0222science_olr:rss001e01_2021294t1615_nnnx54001knjpl_olr010</logical_identifier>
+             <version_id>1.0</version_id>
+             <title>0222-Science Open Loop Receiver (OLR) Data</title>
+             <information_model_version>1.16.0.0</information_model_version>
+             <product_class>Product_Observational</product_class>
+             <Citation_Information>
+                   <author_list>Buccino, D.R.</author_list>
+                   <publication_year>2022</publication_year>
+                   <description>
+                       0222-Science Open Loop Receiver (OLR) Data
+                   </description>
+             </Citation_Information>
+             <Modification_History>
+                   <Modification_Detail>
+                         <modification_date>2022-05-27</modification_date>
+                         <version_id>1.0</version_id>
+                         <description>Initial version</description>
+                  </Modification_Detail>
+             </Modification_History>
+       </Identification_Area>
+       <Observation_Area>
+             <Time_Coordinates>
+                   <start_date_time>2021-10-21T16:15:00Z</start_date_time>
+                   <stop_date_time>2021-10-21T16:30:00Z</stop_date_time>
+             </Time_Coordinates>
+             <Primary_Result_Summary>
+                   <purpose>Science</purpose>
+                   <processing_level>Raw</processing_level>
+                   <description>
+                        0222-Science open-loop data
+                   </description>
+             </Primary_Result_Summary>
+             <Investigation_Area>
+                <name>Europa Clipper</name>
+                <type>Mission</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:investigation:mission.clipper</lid_reference>
+                    <reference_type>data_to_investigation</reference_type>
+                </Internal_Reference>
+             </Investigation_Area> 
+             <Observing_System>
+                 <Observing_System_Component>
+                     <name>Europa Clipper</name>
+                     <type>Spacecraft</type>
+                     <Internal_Reference>
+                         <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.clipper</lid_reference>
+                         <reference_type>is_instrument_host</reference_type>
+                     </Internal_Reference>
+                 </Observing_System_Component>
+                 <Observing_System_Component>
+                     <name>Europa Clipper Gravity/Radio Science</name>
+                     <type>Instrument</type>
+                     <Internal_Reference>
+                         <lid_reference>urn:nasa:pds:context:instrument:clipper.rss</lid_reference>
+                         <reference_type>is_instrument</reference_type>
+                     </Internal_Reference>
+                 </Observing_System_Component>
+                 <Observing_System_Component>
+                     <name>NASA Deep Space Network Radio Science</name>
+                     <type>Instrument</type>
+                     <Internal_Reference>
+                         <lid_reference>urn:nasa:pds:context:instrument:dsn.rss</lid_reference>
+                         <reference_type>is_instrument</reference_type>
+                     </Internal_Reference>
+                 </Observing_System_Component>
+             </Observing_System>
+             <Target_Identification>
+                 <name>Europa</name>
+                 <type>Satellite</type>
+                 <Internal_Reference>
+                     <lid_reference>
+                         urn:nasa:pds:context:target:satellite.europa
+                     </lid_reference>
+                     <reference_type>data_to_target</reference_type>
+                 </Internal_Reference>
+             </Target_Identification>
+             <Mission_Area>
+                 <clipper:Observation_Information>
+                     <clipper:release_number>0001</clipper:release_number>
+                 </clipper:Observation_Information>
+             </Mission_Area>
+       </Observation_Area>
+       <Reference_List>
+           <Internal_Reference>
+               <lid_reference>urn:nasa:pds:clipper_documents:document_mission</lid_reference>
+               <reference_type>data_to_document</reference_type>
+           </Internal_Reference>
+          <Internal_Reference>
+               <lid_reference>urn:nasa:pds:clipper.rss:document.clipper_rss_sis</lid_reference>
+               <reference_type>data_to_document</reference_type>
+           </Internal_Reference>
+		   <Internal_Reference>
+               <lid_reference>urn:nasa:pds:radiosci.documentation:dsn.0222-science</lid_reference>
+               <reference_type>data_to_document</reference_type>
+			   <description>
+			      Official DSN Software Interface Specification for the 0222-Science OLR data format.
+			   </description>
+           </Internal_Reference>
+       </Reference_List>
+       <File_Area_Observational>
+             <File>
+                   <file_name>rss001e01_2021294t1615_nnnx54001knjpl_olr010.dat</file_name>
+                   <creation_date_time>2021-10-21T16:30:00Z</creation_date_time>
+                   <file_size unit="byte">3762576</file_size>
+                   <md5_checksum>0b87555b087170a7e992aafe3c96e3ed</md5_checksum>
+             </File>
+             <Table_Binary>
+                   <name>0222-Science Record</name>
+                   <offset unit="byte">0</offset>
+                   <records>901</records>
+                   <description>
+                                RDEF 0222-Science record 
+                   </description>
+                   <Record_Binary>
+                         <fields>33</fields>
+                         <groups>1</groups>
+                         <record_length unit="byte">4176</record_length> 
+                         <Field_Binary>
+                               <name>record_label</name>
+                               <field_number>1</field_number>
+                               <field_location unit="byte">1</field_location>
+                               <data_type>ASCII_String</data_type>
+                               <field_length unit="byte">4</field_length>
+                               <description>
+                                     ASCII sequence needed to identify data type; Must be 'RDEF'
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>record_length</name>
+                               <field_number>2</field_number>
+                               <field_location unit="byte">5</field_location>
+                               <data_type>UnsignedLSB4</data_type>
+                               <field_length unit="byte">4</field_length>
+							   <unit>byte</unit>
+                               <description>
+                                     Indicates the length, in bytes, of the entire Record; 
+                                     The value is equal to 2*(SAMPLE RATE*SAMPLE SIZE)/8 + 
+                                     HEADER SIZE in bytes, where HEADER SIZE = 176 bytes and 
+									 SAMPLE SIZE is specified by the "sample_size" attribute 
+									 in field 6
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>record_version_id</name>
+                               <field_number>3</field_number>
+                               <field_location unit="byte">9</field_location>
+                               <data_type>UnsignedLSB2</data_type>
+                               <field_length unit="byte">2</field_length>
+                               <description>
+                                     Version number of the data record structure; 
+                                     as specified in the 0222_Science reference document
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>station_id</name>
+                               <field_number>4</field_number>
+                               <field_location unit="byte">11</field_location>
+                               <data_type>UnsignedLSB2</data_type>
+                               <field_length unit="byte">2</field_length>
+                               <description>
+                                     Internal network identifier for the station;
+									 for DSN stations, this value is the DSS station
+									 number, e.g. 14 corresponds with the DSS-14 station
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>spacecraft_id</name>
+                               <field_number>5</field_number>
+                               <field_location unit="byte">13</field_location>
+                               <data_type>UnsignedLSB2</data_type>
+                               <field_length unit="byte">2</field_length>
+                               <description>
+                                     Internal network identifier for the spacecraft;
+									 this is the spacecraft ID number
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>sample_size</name>
+                               <field_number>6</field_number>
+                               <field_location unit="byte">15</field_location>
+                               <data_type>UnsignedLSB2</data_type>
+                               <field_length unit="byte">2</field_length>
+							   <unit>bit</unit>
+                               <description>
+                                     Specifies the resolution of the data samples contained in this 
+                                     data record (number of bits per sample: 1, 2, 4, 8, 16)
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>sample_rate</name>
+                               <field_number>7</field_number>
+                               <field_location unit="byte">17</field_location>
+                               <data_type>UnsignedLSB4</data_type>
+                               <field_length unit="byte">4</field_length>
+							   <unit>hertz</unit>
+                               <description>
+                                     Specifies the sample rate of the data contained in this record, 
+                                     in complex samples per second (SAMPLE RATE * 2 *  SAMPLE SIZE 
+                                     is a multiple of 32, to keep the sample word length to 32 bits)
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>validity_flag</name>
+                               <field_number>8</field_number>
+                               <field_location unit="byte">21</field_location>
+                               <data_type>UnsignedLSB2</data_type>
+                               <field_length unit="byte">2</field_length>
+                               <description>
+                                     Contains a value to indicate whether an error was detected 
+                                     during recording. See Appendix A of 0222-Science SIS
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>agency_flag</name>
+                               <field_number>9</field_number>
+                               <field_location unit="byte">23</field_location>
+                               <data_type>UnsignedLSB2</data_type>
+                               <field_length unit="byte">2</field_length>
+                               <description>
+                                     Specifies the Agency creating the file (The value 0 means 
+                                     that this field is not in use. 1= ESA; 2 =JAXA; 3 = NASA)
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>rf_to_if_downconv</name>
+                               <field_number>10</field_number>
+                               <field_location unit="byte">25</field_location>
+                               <data_type>IEEE754LSBDouble</data_type>
+                               <field_length unit="byte">8</field_length>
+							   <unit>hertz</unit>
+                               <description>
+                                     First downconversion stage: from RF to IF in Hz
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>if_to_channel_downconv</name>
+                               <field_number>11</field_number>
+                               <field_location unit="byte">33</field_location>
+                               <data_type>IEEE754LSBDouble</data_type>
+                               <field_length unit="byte">8</field_length>
+							   <unit>hertz</unit>
+                               <description>
+                                     Second downconversion stage: from IF to channel center frequency 
+                                     in Hz (NOTE - The downconversion from IF to the channel center 
+                                     frequency is represented as the sum of two parameters: a fixed 
+                                     value here in if_to_channel_downconv, and a variable component
+									 from the four channel_phase_polynomial_coefficient values).
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>time_tag_year</name>
+                               <field_number>12</field_number>
+                               <field_location unit="byte">41</field_location>
+                               <data_type>UnsignedLSB2</data_type>
+                               <field_length unit="byte">2</field_length>
+                               <description>
+                                     Specifies the UTC year of the data contained in the record
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>time_tag_doy</name>
+                               <field_number>13</field_number>
+                               <field_location unit="byte">43</field_location>
+                               <data_type>UnsignedLSB2</data_type>
+                               <field_length unit="byte">2</field_length>
+                               <description>
+                                     Specifies the UTC day of year of the data contained in the record
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>time_tag_second_of_day</name>
+                               <field_number>14</field_number>
+                               <field_location unit="byte">45</field_location>
+                               <data_type>UnsignedLSB4</data_type>
+                               <field_length unit="byte">4</field_length>
+							   <unit>second</unit>
+                               <description>
+                                     Specifies the UTC second of the day of the data contained in the 
+                                     record
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>timetag_picoseconds_of_the_second</name>
+                               <field_number>15</field_number>
+                               <field_location unit="byte">49</field_location>
+                               <data_type>IEEE754LSBDouble</data_type>
+                               <field_length unit="byte">8</field_length>
+							   <unit>picosecond</unit>
+                               <description>
+                                     Specifies the UTC picoseconds of the second of the first sample 
+                                     contained in the record
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>channel_accumulated_phase</name>
+                               <field_number>16</field_number>
+                               <field_location unit="byte">57</field_location>
+                               <data_type>IEEE754LSBDouble</data_type>
+                               <field_length unit="byte">8</field_length>
+							   <unit>cycle</unit>
+                               <description>
+                                     The value of the accumulated whole turns of the channel 
+                                     variable downconverter represented by the phase polynomial 
+                                     coefficients (Expressed in 'turns' or 'cycles', i.e. rad/2pi);
+									 the accumulated phase is set to zero at a point that occurs
+									 prior to the record.
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>channel_phase_polynomial_coefficient0</name>
+                               <field_number>17</field_number>
+                               <field_location unit="byte">65</field_location>
+                               <data_type>IEEE754LSBDouble</data_type>
+                               <field_length unit="byte">8</field_length>
+                               <description>
+                                     The channel phase polynomial coefficient of degree 0 (expressed 
+                                     in rad/2pi). This item is referenced to the start time of the
+									 record specified by time_tag_second_of_day. This coefficient
+									 is used to determine the time-variable downconversion part.
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>channel_phase_polynomial_coefficient1</name>
+                               <field_number>18</field_number>
+                               <field_location unit="byte">73</field_location>
+                               <data_type>IEEE754LSBDouble</data_type>
+                               <field_length unit="byte">8</field_length>
+                               <description>
+                                     The channel phase polynomial coefficient of degree 1 (expressed 
+                                     in rad/2pi/s). This item is referenced to the start time of the
+									 record specified by time_tag_second_of_day. This coefficient
+									 is used to determine the time-variable downconversion part.
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>channel_phase_polynomial_coefficient2</name>
+                               <field_number>19</field_number>
+                               <field_location unit="byte">81</field_location>
+                               <data_type>IEEE754LSBDouble</data_type>
+                               <field_length unit="byte">8</field_length>
+                               <description>
+                                     The channel phase polynomial coefficient of degree 2 (expressed 
+                                     in rad/2pi/s^2). This item is referenced to the start time of the
+									 record specified by time_tag_second_of_day. This coefficient
+									 is used to determine the time-variable downconversion part.
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>channel_phase_polynomial_coefficient3</name>
+                               <field_number>20</field_number>
+                               <field_location unit="byte">89</field_location>
+                               <data_type>IEEE754LSBDouble</data_type>
+                               <field_length unit="byte">8</field_length>
+                               <description>
+                                     The channel phase polynomial coefficient of degree 3 (expressed
+                                     in rad/2pi/s^3). This item is referenced to the start time of the
+									 record specified by time_tag_second_of_day. This coefficient
+									 is used to determine the time-variable downconversion part.
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>empty_fields1</name>
+                               <field_number>21</field_number>
+                               <field_location unit="byte">97</field_location>
+                               <data_type>ASCII_String</data_type>
+                               <field_length unit="byte">36</field_length>
+							   <unit>byte</unit>
+                               <description>
+                                     Total number of bytes free to be used for future expansion of
+									 the header
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>predict_pass_number</name>
+                               <field_number>22</field_number>
+                               <field_location unit="byte">133</field_location>
+                               <data_type>UnsignedLSB2</data_type>
+                               <field_length unit="byte">2</field_length>
+                               <description>
+                                     DSN pass number from frequency predict file
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>uplink_band</name>
+                               <field_number>23</field_number>
+                               <field_location unit="byte">135</field_location>
+                               <data_type>UnsignedByte</data_type>
+                               <field_length unit="byte">1</field_length>
+                               <description>
+                                     Uplink band ID (0 => Unknown or not applicable; 1 => S-band; 
+                                     2 => X-band; 3 => Ka-band; 4 => Ku-band; 5 => L-band)
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>downlink_band</name>
+                               <field_number>24</field_number>
+                               <field_location unit="byte">136</field_location>
+                               <data_type>UnsignedByte</data_type>
+                               <field_length unit="byte">1</field_length>
+                               <description>
+                                     Downlink band ID (0 => Unknown or not applicable; 1 => S-band; 
+                                     2 => X-band; 3 => Ka-band; 4 => Ku-band; 5 => L-band)
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>track_mode</name>
+                               <field_number>25</field_number>
+                               <field_location unit="byte">137</field_location>
+                               <data_type>UnsignedByte</data_type>
+                               <field_length unit="byte">1</field_length>
+                               <description>
+                                     Tracking Mode (1 => 1-Way; 2 => 2-Way; 3 => 3-Way)
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>uplink_dss_id</name>
+                               <field_number>26</field_number>
+                               <field_location unit="byte">138</field_location>
+                               <data_type>UnsignedByte</data_type>
+                               <field_length unit="byte">1</field_length>
+                               <description>
+                                     Uplink station ID (0 => No Uplink)
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>olr_id</name>
+                               <field_number>27</field_number>
+                               <field_location unit="byte">139</field_location>
+                               <data_type>UnsignedByte</data_type>
+                               <field_length unit="byte">1</field_length>
+                               <description>
+                                     Open Loop Receiver ID
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>olr_software_version</name>
+                               <field_number>28</field_number>
+                               <field_location unit="byte">140</field_location>
+                               <data_type>UnsignedByte</data_type>
+                               <field_length unit="byte">1</field_length>
+                               <description>
+                                     Open Loop Receiver software version
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>channel_power_calibration_factor</name>
+                               <field_number>29</field_number>
+                               <field_location unit="byte">141</field_location>
+                               <data_type>IEEE754LSBSingle</data_type>
+                               <field_length unit="byte">4</field_length>
+                               <description>
+                                     This value provides conversion from dB full scale (dBfs) to dBm 
+                                     of channel at input to A/D converter, (IFD)
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>total_frequency_offset</name>
+                               <field_number>30</field_number>
+                               <field_location unit="byte">145</field_location>
+                               <data_type>IEEE754LSBDouble</data_type>
+                               <field_length unit="byte">8</field_length>
+							   <unit>hertz</unit>
+                               <description>
+                                     Offset of channel center frequency from predict in Hertz
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>channel_number</name>
+                               <field_number>31</field_number>
+                               <field_location unit="byte">153</field_location>
+                               <data_type>UnsignedByte</data_type>
+                               <field_length unit="byte">1</field_length>
+                               <description>
+                                     Physical channel number (0 to 127) used for this recording
+									 by the OLR
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>empty_fields2</name>
+                               <field_number>32</field_number>
+                               <field_location unit="byte">154</field_location>
+                               <data_type>ASCII_String</data_type>
+                               <field_length unit="byte">19</field_length>
+							   <unit>byte</unit>
+                               <description>
+                                     Total number of bytes free to be used for expansion of
+									 the header
+                               </description>
+                         </Field_Binary>
+                         <Field_Binary>
+                               <name>end_label</name>
+                               <field_number>33</field_number>
+                               <field_location unit="byte">173</field_location>
+                               <data_type>SignedLSB4</data_type>
+                               <field_length unit="byte">4</field_length>
+                               <description>
+                                     End label for data synchronization check. Is equal to -99999
+                               </description>
+                         </Field_Binary>
+                         <Group_Field_Binary>
+                               <name>I/Q Pair</name>
+                               <group_number>1</group_number>
+                               <repetitions>1000</repetitions>
+                               <fields>2</fields>
+                               <groups>0</groups>
+                               <description>
+                                     The Data Section of each Record of the RDEF file contains 
+                                     only the in-phase (I) and quadrature-phase (Q) samples recorded 
+                                     at the receiver.
+                                     
+                                     Samples are packed into 32-bit words.  A record contains an 
+                                     integer number of 32-bit words. The Q data and the I data 
+									 for a given time sample are adjacent. Two complex 16-bit 
+									 samples are packed into each 32-bit word.
+                                     
+                                     Truncation is used, to reduce the number of bits per sample 
+                                     to the desired value. This truncation creates an offset of 
+                                     –0.5 in the output data stream values that needs to be 
+                                     corrected in post processing software. To compensate for this 
+                                     offset, each sample must be put through the transformation 
+                                     2*k + 1, where k is the 2’s complement value of the sample.
+                               </description>
+                               <group_location unit="byte">177</group_location>
+                               <group_length unit="byte">4000</group_length>
+                               <Field_Binary>
+                                     <name>I</name>
+                                     <field_number>1</field_number>
+                                     <field_location unit="byte">1</field_location>
+                                     <data_type>UnsignedLSB2</data_type>
+                                     <field_length unit="byte">2</field_length>
+                                     <description>The real part of a complex data sample</description>
+                               </Field_Binary>
+                               <Field_Binary>
+                                     <name>Q</name>
+                                     <field_number>2</field_number>
+                                     <field_location unit="byte">3</field_location>
+                                     <data_type>UnsignedLSB2</data_type>
+                                     <field_length unit="byte">2</field_length>
+                                     <description>The complex part of a complex data sample</description>
+                               </Field_Binary>
+                         </Group_Field_Binary>
+                   </Record_Binary>
+             </Table_Binary>
+      </File_Area_Observational>
+</Product_Observational>

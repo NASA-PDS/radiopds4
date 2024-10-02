@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1900.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://pds.nasa.gov/pds4/mission/insight/v1/PDS4_INSIGHT_1600.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<Product_Observational 
+    xmlns="http://pds.nasa.gov/pds4/pds/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    xmlns:insight="http://pds.nasa.gov/pds4/mission/insight/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1  
+    http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1900.xsd
+    
+    http://pds.nasa.gov/pds4/mission/insight/v1
+    http://pds.nasa.gov/pds4/mission/insight/v1/PDS4_INSIGHT_1600.xsd">
+    <Identification_Area>
+        <logical_identifier>urn:nasa:pds:insight_rise_raw:trk234_trknav:product_id</logical_identifier>
+        <version_id>1.0</version_id>
+        <title>TRK234 Label</title>
+        <information_model_version>1.9.0.0</information_model_version>
+        <product_class>Product_Observational</product_class>
+        <Modification_History>
+            <Modification_Detail>
+                <modification_date>2017-10-20</modification_date>
+                <version_id>1.0</version_id>
+                <description>
+                    Post-peer review version
+                </description>
+            </Modification_Detail>
+        </Modification_History>
+    </Identification_Area>
+    <Observation_Area>
+        <Time_Coordinates>
+            <start_date_time>1900-01-01T00:00:00Z</start_date_time>
+            <stop_date_time>1900-01-01T00:00:01Z</stop_date_time>
+        </Time_Coordinates>
+        <Primary_Result_Summary>
+            <purpose>Science</purpose>
+            <processing_level>Raw</processing_level>
+            <description>
+    The TNF data type captures radiometric tracking data for delivery
+    to navigation and radio science users from the Telecommunications
+    Services at JPL.  The product replaces data types formerly known
+    as Orbit Data Files, Archival Tracking Data Files, and others.
+    Format and content of the TNF data product is documented in:
+
+                              820-013
+                   Deep Space Mission System (DSMS)
+                   External Interface Specification
+                            JPL D-16765
+                             TRK-2-34
+               DSMS Tracking System Data Archival Format
+                      Jet Propulsion Laboratory
+                        4800 Oak Grove Drive
+                      Pasadena, CA  91109-8099
+
+    Background information on the radiometric system may be found in:
+
+             Formulation for Observed and Computed Values
+           of Deep Space Network Data Types  for Navigation
+                         by Theodore D. Moyer
+                  JPL Publication 00-7, October 2000
+     Monograph 2, Deep Space Communications and Navigation Series
+                      Jet Propulsion Laboratory
+                        4800 Oak Grove Drive
+                      Pasadena, CA  91109-8099
+            </description>
+        </Primary_Result_Summary>
+        
+        <Investigation_Area>
+            <name>InSight</name>
+            <type>Mission</type>
+            <Internal_Reference>
+                <lidvid_reference>urn:nasa:pds:context:investigation:mission.insight::1.0</lidvid_reference>
+                <reference_type>data_to_investigation</reference_type>
+            </Internal_Reference>
+        </Investigation_Area>
+        <Observing_System>
+            <name>InSight</name>
+            <Observing_System_Component>
+                <name>NSYT</name>
+                <type>Spacecraft</type>
+                <description>instrument_host InSight</description>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.insight</lid_reference>
+                    <reference_type>is_instrument_host</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+            <Observing_System_Component>
+                <name>RISE</name>
+                <type>Instrument</type>
+                <description>Rotation and Interior Structure Experiment</description>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument:rise.insight</lid_reference>
+                    <reference_type>is_instrument</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+            <Observing_System_Component>
+                <name>DSN</name>
+                <type>Observatory</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:facility:observatory.dsn</lid_reference>
+                    <reference_type>is_facility</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>            
+        </Observing_System>
+        <Target_Identification>
+            <name>Mars</name>
+            <type>Planet</type>
+            <description>Mars is the fourth planet from the Sun and Earth's closest neighbor</description>
+            <Internal_Reference>
+                <lidvid_reference>urn:nasa:pds:context:target:target.mars::1.0</lidvid_reference>
+                <reference_type>data_to_target</reference_type>
+            </Internal_Reference>
+        </Target_Identification>
+        <Mission_Area>
+            <insight:Observation_Information>
+                <insight:release_number>9999</insight:release_number>
+                <insight:mission_phase_name>SURFACE MISSION</insight:mission_phase_name>
+                <insight:product_type>TNF</insight:product_type>
+            </insight:Observation_Information>
+        </Mission_Area>
+        <Discipline_Area></Discipline_Area>        
+    </Observation_Area>
+
+    <Reference_List>
+        <Internal_Reference>
+            <lidvid_reference>urn:nasa:pds:insight_documents:document_mission::1.0</lidvid_reference>
+            <reference_type>data_to_document</reference_type>
+        </Internal_Reference>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:insight_documents:document_rise:rise_insight_sis_raw</lid_reference>
+            <reference_type>data_to_document</reference_type>
+        </Internal_Reference>
+    </Reference_List>    
+
+    <File_Area_Observational>
+        <File>
+            <file_name>FILENAME</file_name>
+            <local_identifier>trk_TableBinary</local_identifier>
+            <creation_date_time>1900-01-01T00:00:00Z</creation_date_time>
+            <file_size unit="byte">0</file_size>
+            <records>0</records>
+            <md5_checksum>00</md5_checksum>
+        </File>
+
+
+    </File_Area_Observational>
+</Product_Observational>

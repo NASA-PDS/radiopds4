@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1401.sch"?>
+
+<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1  http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1401.xsd">
+    
+    <Identification_Area>
+        <logical_identifier>urn:nasa:pds:insight_rise_raw:trk224_weather:product_id</logical_identifier>
+        <version_id>1.0</version_id>
+        <title>DSN Weather (TRK 2-24) Sample Labels</title>
+        <information_model_version>1.4.0.1</information_model_version>
+        <product_class>Product_Observational</product_class>
+        <Modification_History>
+            <Modification_Detail>
+                <modification_date>2014-07-04</modification_date>
+                <version_id>1.0</version_id>
+                <description>
+                    initial creation of PDS4 label for TRK 2-24 DSN weather ASCII file
+                </description>
+            </Modification_Detail>
+        </Modification_History>
+    </Identification_Area>
+    <Observation_Area>
+        <comment>
+        </comment>
+        <Time_Coordinates>
+            <start_date_time>2012-179T11:40:22Z</start_date_time>
+            <stop_date_time>2012-179T11:40:22Z</stop_date_time>
+        </Time_Coordinates>
+        <Primary_Result_Summary>
+            <purpose>Science</purpose>
+            <processing_level>Raw</processing_level>
+            <description>
+    Weather data provided by the Deep Space Network (DSN) are used by 
+    radio science teams and other investigators. They are recorded at 
+    a one-minute rate, thinned to a sampling interval that is 
+    determined by the user accuracy requirements, and delivered 
+    post-real time at intervals that are determined by the timeliness 
+    requirement of the primary users and by negotiations with the 
+    various DSN users. Weather data will be maintained as files of 
+    text in American Standard Code for Information Interchange (ASCII) 
+    format. The WEA data product is documented in:
+
+                              820-013
+                   Deep Space Mission System (DSMS)
+                   External Interface Specification
+                            JPL D-16765
+                             TRK-2-24
+            DSMS Tracking System Weather Data Interface
+                      Jet Propulsion Laboratory
+                        4800 Oak Grove Drive
+                      Pasadena, CA  91109-8099
+            </description>
+        </Primary_Result_Summary>
+        
+        <Investigation_Area>
+            <name>InSight</name>
+            <type>Mission</type>
+            <Internal_Reference>
+                <lidvid_reference>urn:nasa:pds:context:investigation:mission.insight::1.0</lidvid_reference>
+                <reference_type>data_to_investigation</reference_type>
+            </Internal_Reference>
+        </Investigation_Area>
+        <Observing_System>
+            <name>InSight</name>
+            <Observing_System_Component>
+                <name>NSYT</name>
+                <type>Spacecraft</type>
+                <description>instrument_host InSight</description>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.insight</lid_reference>
+                    <reference_type>is_instrument_host</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+            <Observing_System_Component>
+                <name>RISE</name>
+                <type>Instrument</type>
+                <description>Rotation and Interior Structure Experiment</description>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument:instrument.rise.insight</lid_reference>
+                    <reference_type>is_instrument</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+        </Observing_System>
+        <Target_Identification>
+            <name>MARS</name>
+            <type>Planet</type>
+            <description>Mars is the fourth planet from the Sun and Earth's closest neighbor</description>
+            <Internal_Reference>
+                <lidvid_reference>urn:nasa:pds:context:target:target.mars::1.0</lidvid_reference>
+                <reference_type>data_to_target</reference_type>
+            </Internal_Reference>
+        </Target_Identification>
+        <!-- ============================================================ -->
+        <!-- Reference the attributes that were imported from the         -->
+        <!-- local dictionary (using the local namespace (dph)            -->
+        <!-- ============================================================ -->
+        <Mission_Area>
+        </Mission_Area>
+        <Discipline_Area></Discipline_Area>        
+    </Observation_Area>
+
+    <Reference_List>
+        <Internal_Reference>
+            <lidvid_reference>urn:nasa:pds:insight_documents:document_mission::1.0</lidvid_reference>
+            <reference_type>data_to_document</reference_type>
+        </Internal_Reference>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:insight_documents:document_rise</lid_reference>
+            <reference_type>data_to_document</reference_type>
+        </Internal_Reference>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:context:target:target.mars</lid_reference>
+            <reference_type>data_to_document</reference_type>
+        </Internal_Reference>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:context:node:node.geosci</lid_reference>
+            <reference_type>data_to_document</reference_type>
+        </Internal_Reference>
+    </Reference_List>    
+
+    <File_Area_Observational>
+        <File>
+            <file_name>FILENAME</file_name>
+            <local_identifier>media_weather_table</local_identifier>
+            <creation_date_time>1900-01-01T00:00:00Z</creation_date_time>
+            <file_size unit="byte">0</file_size>
+            <records>1</records>
+            <md5_checksum>99d07b6610686dff68850d3adb2b2870</md5_checksum>
+        </File>
+        <Table_Character>
+            <local_identifier>surfmet_data</local_identifier>
+            <offset unit="byte">0</offset>
+            <records>1</records>
+            <record_delimiter>Carriage-Return Line-Feed</record_delimiter>
+            <Record_Character>
+               <fields>9</fields>
+               <groups>0</groups>
+               <record_length unit="byte">92</record_length>
+               <Field_Character>
+                  <name>DSN_Complex</name>
+                  <field_number>1</field_number>
+                  <field_location unit="byte">1</field_location>
+                  <data_type>ASCII_Integer</data_type>
+                  <field_length unit="byte">10</field_length>
+                  <field_format>I2</field_format>
+                  <description>DSN Complex this data is taken at (Goldstone = 10, Canberra = 40, Madrid = 60)</description>
+               </Field_Character>
+               <Field_Character>
+                  <name>Year</name>
+                  <field_number>2</field_number>
+                  <field_location unit="byte">11</field_location>
+                  <data_type>ASCII_Integer</data_type>
+                  <field_length unit="byte">10</field_length>
+                  <field_format>I4</field_format>
+                  <description>Calendar year this entry was taken</description>
+               </Field_Character>
+               <Field_Character>
+                  <name>Day_of_Year</name>
+                  <field_number>3</field_number>
+                  <field_location unit="byte">21</field_location>
+                  <data_type>ASCII_Integer</data_type>
+                  <field_length unit="byte">10</field_length>
+                  <field_format>I3</field_format>
+                  <description>Day of the calendar year this entry was taken</description>
+               </Field_Character>
+               <Field_Character>
+                  <name>Time</name>
+                  <field_number>4</field_number>
+                  <field_location unit="byte">31</field_location>
+                  <data_type>ASCII_Integer</data_type>
+                  <field_length unit="byte">10</field_length>
+                  <field_format>I3</field_format>
+                  <description>Time of day in UTC this entry was taken, in the format HHMM, where HH is the hour and MM is the minute.</description>
+               </Field_Character>
+               <Field_Character>
+                  <name>Dew_Point</name>
+                  <field_number>5</field_number>
+                  <field_location unit="byte">41</field_location>
+                  <data_type>ASCII_Real</data_type>
+                  <field_length unit="byte">10</field_length>
+                  <field_format>F2.1</field_format>
+                  <description>Dew point temperature, in Celsius</description>
+               </Field_Character>
+               <Field_Character>
+                  <name>Temperature</name>
+                  <field_number>6</field_number>
+                  <field_location unit="byte">51</field_location>
+                  <data_type>ASCII_Real</data_type>
+                  <field_length unit="byte">10</field_length>
+                  <field_format>F2.1</field_format>
+                  <description>Surfance air temperature, in Celsius</description>
+               </Field_Character>
+               <Field_Character>
+                  <name>Pressure</name>
+                  <field_number>7</field_number>
+                  <field_location unit="byte">61</field_location>
+                  <data_type>ASCII_Real</data_type>
+                  <field_length unit="byte">10</field_length>
+                  <field_format>F3.1</field_format>
+                  <description>Surface pressure, in millibars</description>
+               </Field_Character>
+               <Field_Character>
+                  <name>H2O_Partial_Pressure</name>
+                  <field_number>8</field_number>
+                  <field_location unit="byte">71</field_location>
+                  <data_type>ASCII_Real</data_type>
+                  <field_length unit="byte">10</field_length>
+                  <field_format>F2.1</field_format>
+                  <description>Water partial pressure, in millibars</description>
+               </Field_Character>
+               <Field_Character>
+                  <name>Humidity</name>
+                  <field_number>9</field_number>
+                  <field_location unit="byte">81</field_location>
+                  <data_type>ASCII_Integer</data_type>
+                  <field_length unit="byte">10</field_length>
+                  <field_format>I3</field_format>
+                  <description>Percent relative humidity (%)</description>
+               </Field_Character>
+            </Record_Character>
+        </Table_Character>
+    </File_Area_Observational>
+</Product_Observational>
