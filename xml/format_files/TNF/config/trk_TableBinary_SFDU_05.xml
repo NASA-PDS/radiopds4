@@ -53,6 +53,7 @@
                     <field_location unit="byte">13</field_location>
                     <data_type>UnsignedMSB8</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Bytes</unit>
                     <description>Length attribute of the tracking data SFDU.; Indicates the length of the data following this element.; DT0 => 162; DT1 => 358 ; DT2 => 194 ; DT3 => 304 ; DT4 => 276 ; DT5 => 388 ; DT6 => 200; DT7 => 330; DT8 => 178 ; DT9 => 124; DT10 => 204 ; DT11 => 182; DT12 => 164 ; DT13 => 160; DT14 => 348; DT15 => 194; DT16 => 182 + 18 * num_obs; DT17 => 194 + 22 * num_obs</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -69,6 +70,7 @@
                     <field_location unit="byte">23</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Bytes</unit>
                     <description>Length attribute of the aggregation CHDO.; Indicates the length of the sum of the primary and secondary CHDOs.; CHDO 132 => 78; CHDO 133 => 122; CHDO 134 => 136; CHDO 135 => 100; CHDO 136 => 110</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -85,6 +87,7 @@
                     <field_location unit="byte">27</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Bytes</unit>
                     <description>Length attribute of the primary CHDO.  Indicates the length, in bytes, of the value field (bytes after this item) of the primary CHDO.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -133,6 +136,7 @@
                     <field_location unit="byte">35</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Bytes</unit>
                     <description>Length attribute of the secondary CHDO.  Indicates the length, in bytes, of the value field (bytes after this item) of the secondary CHDO.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -205,6 +209,7 @@
                     <field_location unit="byte">53</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Seconds</unit>
                     <description>Time tag seconds of day.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -213,6 +218,7 @@
                     <field_location unit="byte">61</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Days</unit>
                     <description>Record creation time days.; Days since 1/1/1958.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -221,6 +227,7 @@
                     <field_location unit="byte">63</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>msec</unit>
                     <description>Record creation time milliseconds of day.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -277,6 +284,7 @@
                     <field_location unit="byte">73</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>seconds</unit>
                     <description>Array delay value.  ; Time delay added to path by arraying equipment.  Obtained from arraying equipment.  Any measurements include this delay.  Valid only if Array Flag (array_flag) is non-zero.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -349,7 +357,11 @@
                     <field_location unit="byte">89</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
-                    <description>Receive time tag delay.  ; Value used to offset downlink time tag (e.g., for Goldstone Beam Waveguide antennas).  A value of ?1.0 indicates invalid (or not provided).</description>
+                    <unit>seconds</unit>
+                    <description>Receive time tag delay.  ; Value used to offset downlink time tag (e.g., for Goldstone Beam Waveguide antennas).  A value of -1.0 indicates invalid (or not provided).</description>
+                    <Special_Constants>
+                        <invalid_constant>-1.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>dl_zheight_corr</name>
@@ -357,7 +369,11 @@
                     <field_location unit="byte">97</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>seconds</unit>
                     <description>Downlink Z-height correction. ; Value of -99.0 indicates invalid.</description>
+                    <Special_Constants>
+                        <invalid_constant>-99.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>vld_ul_stn</name>
@@ -413,7 +429,11 @@
                     <field_location unit="byte">107</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Hz</unit>
                     <description>Spacecraft oscillator frequency.; Spacecraft one?way frequency.; 0.0 if unknown.</description>
+                    <Special_Constants>
+                        <unknown_constant>0.0</unknown_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>scft_transpd_delay</name>
@@ -421,7 +441,11 @@
                     <field_location unit="byte">115</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Seconds</unit>
                     <description>Spacecraft transponder delay.  ; Coherent ranging delay.  Value of ?1.0 indicates invalid.</description>
+                    <Special_Constants>
+                        <invalid_constant>-1.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>scft_transpd_turn_num</name>
@@ -461,6 +485,7 @@
                     <field_location unit="byte">133</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Days</unit>
                     <description>Modification time days.; Days since 1/1/1958.  Last modification time.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -469,6 +494,7 @@
                     <field_location unit="byte">135</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>msec</unit>
                     <description>Modification time milliseconds of day. ; Last modification time.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -525,6 +551,7 @@
                     <field_location unit="byte">149</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Bytes</unit>
                     <description>Length attribute of the downlink PN ranging phase data CHDO value field.; Number of bytes after this item.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -533,6 +560,7 @@
                     <field_location unit="byte">151</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Range Units</unit>
                     <description>Station calibration value.  (Two?way)  Value includes the equipment in the path, but not the Z?height correction. (0.0 if not measured.)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -541,6 +569,7 @@
                     <field_location unit="byte">159</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Range Units</unit>
                     <description>Downlink station calibration value.  ; Value includes the downlink equipment in the path, but not the Z?height correction.  (0.0 if not measured.)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -549,6 +578,7 @@
                     <field_location unit="byte">167</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Sky level Hz</unit>
                     <description>Downlink calibration frequency. ; Frequency at which the calibration was done.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -557,6 +587,7 @@
                     <field_location unit="byte">175</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Range Units</unit>
                     <description>Standard deviation of station calibration value.; For stn_cal and dl_stn_cal.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -573,6 +604,7 @@
                     <field_location unit="byte">181</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Range Units</unit>
                     <description>Measured range phase.; Range phase.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -581,6 +613,7 @@
                     <field_location unit="byte">189</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Percentage</unit>
                     <description>Probability of Acquistion. ; Formerly called  Figure of Merit , this is the probability of acquiring the correct range.; </description>
                 </Field_Binary>
                 <Field_Binary>
@@ -589,6 +622,7 @@
                     <field_location unit="byte">193</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Range Units</unit>
                     <description>Range residual.; Measured range minus predicted range.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -597,6 +631,7 @@
                     <field_location unit="byte">201</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Range Units</unit>
                     <description>DRVID.; DRVID measured using doppler data from carrier.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -605,6 +640,7 @@
                     <field_location unit="byte">209</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Seconds</unit>
                     <description>Round trip light time.; Predicted value.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -613,7 +649,11 @@
                     <field_location unit="byte">213</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>dB-Hz</unit>
                     <description>Pc/N0.; Carrier power to noise spectral density ratio.  Has a value of -300.0 if no signal.</description>
+                    <Special_Constants>
+                        <not_applicable_constant>-300.0</not_applicable_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>pcn0_resid</name>
@@ -621,7 +661,11 @@
                     <field_location unit="byte">217</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>dB-Hz</unit>
                     <description>Pc/N0 residual.; Actual value minus predicted value.</description>
+                    <Special_Constants>
+                        <not_applicable_constant>-300.0</not_applicable_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>pdn0</name>
@@ -629,7 +673,11 @@
                     <field_location unit="byte">221</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
-                    <description>Pd/N0.; Data power to noise spectral density ratio.  Has a value of ; -300.0 if no signal.</description>
+                    <unit>dB-Hz</unit>
+                    <description>Pd/N0.; Data power to noise spectral density ratio.  Has a value of -300.0 if no signal.</description>
+                    <Special_Constants>
+                        <not_applicable_constant>-300.0</not_applicable_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>pdn0_resid</name>
@@ -637,7 +685,11 @@
                     <field_location unit="byte">225</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>dB-Hz</unit>
                     <description>Pd/N0 residual.; Actual value minus predicted value.</description>
+                    <Special_Constants>
+                        <not_applicable_constant>-300.0</not_applicable_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>prn0</name>
@@ -645,7 +697,11 @@
                     <field_location unit="byte">229</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
-                    <description>Pr/N0. ; Ranging power to noise spectral density ratio. Has a value of  300.0 if no signal.</description>
+                    <unit>dB-Hz</unit>
+                    <description>Pr/N0. ; Ranging power to noise spectral density ratio. Has a value of -300.0 if no signal.</description>
+                    <Special_Constants>
+                        <not_applicable_constant>-300.0</not_applicable_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>prn0_resid</name>
@@ -653,7 +709,11 @@
                     <field_location unit="byte">233</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>dB-Hz</unit>
                     <description>Pr/N0 residual.; Actual value minus predicted value.</description>
+                    <Special_Constants>
+                        <not_applicable_constant>-300.0</not_applicable_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>system_noise_temp</name>
@@ -661,6 +721,7 @@
                     <field_location unit="byte">237</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>K (degrees Kelvin)</unit>
                     <description>System Noise Temperature.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -717,6 +778,7 @@
                     <field_location unit="byte">247</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Cycles</unit>
                     <description>PN chip clock phase.  ; Position in the chip at the time tag.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -773,6 +835,7 @@
                     <field_location unit="byte">283</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Seconds</unit>
                     <description>Integration time.; Time that the signal was integrated over.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -781,6 +844,7 @@
                     <field_location unit="byte">287</field_location>
                     <data_type>UnsignedByte</data_type>
                     <field_length unit="byte">1</field_length>
+                    <unit>Megachips / sec</unit>
                     <description>Chip Rate.; The PN pattern chip rate in Megachips/sec, rounded down.; ; </description>
                 </Field_Binary>
                 <Field_Binary>
@@ -789,6 +853,7 @@
                     <field_location unit="byte">288</field_location>
                     <data_type>UnsignedByte</data_type>
                     <field_length unit="byte">1</field_length>
+                    <unit>Chips</unit>
                     <description>Subcode #1 length.; A value of 0 implies no subcode.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -797,6 +862,7 @@
                     <field_location unit="byte">289</field_location>
                     <data_type>UnsignedByte</data_type>
                     <field_length unit="byte">1</field_length>
+                    <unit>Chips</unit>
                     <description>Subcode #2 length.; A value of 0 implies no subcode.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -805,6 +871,7 @@
                     <field_location unit="byte">290</field_location>
                     <data_type>UnsignedByte</data_type>
                     <field_length unit="byte">1</field_length>
+                    <unit>Chips</unit>
                     <description>Subcode #3 length.; A value of 0 implies no subcode.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -813,6 +880,7 @@
                     <field_location unit="byte">291</field_location>
                     <data_type>UnsignedByte</data_type>
                     <field_length unit="byte">1</field_length>
+                    <unit>Chips</unit>
                     <description>Subcode #4 length.; A value of 0 implies no subcode.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -821,6 +889,7 @@
                     <field_location unit="byte">292</field_location>
                     <data_type>UnsignedByte</data_type>
                     <field_length unit="byte">1</field_length>
+                    <unit>Chips</unit>
                     <description>Subcode #5 length.; A value of 0 implies no subcode.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -829,6 +898,7 @@
                     <field_location unit="byte">293</field_location>
                     <data_type>UnsignedByte</data_type>
                     <field_length unit="byte">1</field_length>
+                    <unit>Chips</unit>
                     <description>Subcode #6 length.; A value of 0 implies no subcode.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -925,6 +995,7 @@
                     <field_location unit="byte">347</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>PN chips</unit>
                     <description>PN Code Length.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -949,6 +1020,7 @@
                     <field_location unit="byte">355</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Seconds</unit>
                     <description>Receive In-phase time   seconds of day.; Seconds of day of the time of zero phase on downlink range generation.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -973,6 +1045,7 @@
                     <field_location unit="byte">371</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Seconds</unit>
                     <description>Ranging cycle time.; Integration time for each PN range point.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -1144,5 +1217,5 @@
                     <description>Reserved.; Four bytes.</description>
                 </Field_Binary>
 
-            </Record_Binary>         
+            </Record_Binary>
         </Table_Binary>
