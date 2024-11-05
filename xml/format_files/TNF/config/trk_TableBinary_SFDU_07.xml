@@ -53,6 +53,7 @@
                     <field_location unit="byte">13</field_location>
                     <data_type>UnsignedMSB8</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Bytes</unit>
                     <description>Length attribute of the tracking data SFDU.; Indicates the length of the data following this element.; DT0 => 162; DT1 => 358 ; DT2 => 194 ; DT3 => 304 ; DT4 => 276 ; DT5 => 388 ; DT6 => 200; DT7 => 330; DT8 => 178 ; DT9 => 124; DT10 => 204 ; DT11 => 182; DT12 => 164 ; DT13 => 160; DT14 => 348; DT15 => 194; DT16 => 182 + 18 * num_obs; DT17 => 194 + 22 * num_obs</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -69,6 +70,7 @@
                     <field_location unit="byte">23</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Bytes</unit>
                     <description>Length attribute of the aggregation CHDO.; Indicates the length of the sum of the primary and secondary CHDOs.; CHDO 132 => 78; CHDO 133 => 122; CHDO 134 => 136; CHDO 135 => 100; CHDO 136 => 110</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -85,6 +87,7 @@
                     <field_location unit="byte">27</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Bytes</unit>
                     <description>Length attribute of the primary CHDO.  Indicates the length, in bytes, of the value field (bytes after this item) of the primary CHDO.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -133,6 +136,7 @@
                     <field_location unit="byte">35</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Bytes</unit>
                     <description>Length attribute of the secondary CHDO.  Indicates the length, in bytes, of the value field (bytes after this item) of the secondary CHDO.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -197,6 +201,7 @@
                     <field_location unit="byte">49</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Seconds</unit>
                     <description>Time tag seconds of day.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -205,6 +210,7 @@
                     <field_location unit="byte">57</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Days</unit>
                     <description>Record creation time days.; Days since 1/1/1958.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -213,6 +219,7 @@
                     <field_location unit="byte">59</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>msec</unit>
                     <description>Record creation time milliseconds of day.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -285,7 +292,11 @@
                     <field_location unit="byte">71</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
-                    <description>Transmit time tag delay.  ; Value used to offset uplink time tag (e.g., for Goldstone Beam Waveguide antennas).  A value of ?1.0 indicates invalid (or not provided).</description>
+                    <unit>Seconds</unit>
+                    <description>Transmit time tag delay.  ; Value used to offset uplink time tag (e.g., for Goldstone Beam Waveguide antennas).  A value of -1.0 indicates invalid (or not provided).</description>
+                    <Special_Constants>
+                        <invalid_constant>-1.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>ul_zheight_corr</name>
@@ -293,7 +304,11 @@
                     <field_location unit="byte">79</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Seconds</unit>
                     <description>Uplink Z-height correction.; Value of -99.0 indicates invalid.</description>
+                    <Special_Constants>
+                        <invalid_constant>-99.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>dl_dss_id</name>
@@ -349,6 +364,7 @@
                     <field_location unit="byte">89</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Seconds</unit>
                     <description>Array delay value.  ; Time delay added to path by arraying equipment.  Obtained from arraying equipment.  Any measurements include this delay.  Valid only if Array Flag  (array_flag) is non-zero.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -389,7 +405,11 @@
                     <field_location unit="byte">101</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
-                    <description>Receive time tag delay.  ; Value used to offset downlink time tag (e.g., for Goldstone Beam Waveguide antennas).  A value of ?1.0 indicates invalid (or not provided).</description>
+                    <unit>Seconds</unit>
+                    <description>Receive time tag delay.  ; Value used to offset downlink time tag (e.g., for Goldstone Beam Waveguide antennas).  A value of -1.0 indicates invalid (or not provided).</description>
+                    <Special_Constants>
+                        <invalid_constant>-1.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>dl_zheight_corr</name>
@@ -397,7 +417,11 @@
                     <field_location unit="byte">109</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Seconds</unit>
                     <description>Downlink Z-height correction.; Value of -99.0 indicates invalid. </description>
+                    <Special_Constants>
+                        <invalid_constant>-99.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>vld_ul_stn</name>
@@ -461,7 +485,11 @@
                     <field_location unit="byte">121</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Hz</unit>
                     <description>Spacecraft oscillator frequency.; Spacecraft one?way frequency.  0.0 if unknown.</description>
+                    <Special_Constants>
+                        <unknown_constant>0.0</unknown_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>scft_transpd_delay</name>
@@ -469,7 +497,11 @@
                     <field_location unit="byte">129</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Seconds</unit>
                     <description>Spacecraft transponder delay.; Coherent ranging delay.  Value of ?1.0 indicates invalid.</description>
+                    <Special_Constants>
+                        <invalid_constant>-1.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>scft_transpd_turn_num</name>
@@ -509,6 +541,7 @@
                     <field_location unit="byte">147</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Days</unit>
                     <description>Modification time days.; Days since 1/1/1958.  Last modification time.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -517,6 +550,7 @@
                     <field_location unit="byte">149</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>msec</unit>
                     <description>Modification time milliseconds of day. ; Last modification time.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -525,6 +559,7 @@
                     <field_location unit="byte">153</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Seconds</unit>
                     <description>Count time.; Integration time of the counts.  Value of 0 indicates Not Applicable</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -573,6 +608,7 @@
                     <field_location unit="byte">163</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Bytes</unit>
                     <description>Length attribute of the range data CHDO value field. Number of bytes after this item.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -581,7 +617,11 @@
                     <field_location unit="byte">165</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
-                    <description>Uplink station calibration value.; Invalid indicated by value of;   1.0.</description>
+                    <unit>Range Units</unit>
+                    <description>Uplink station calibration value.; Invalid indicated by value of -1.0.</description>
+                    <Special_Constants>
+                        <invalid_constant>-1.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>dl_stn_cal</name>
@@ -589,7 +629,11 @@
                     <field_location unit="byte">173</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
-                    <description>Downlink station calibration value.; Invalid indicated by value of ;  1.0.</description>
+                    <unit>Range Units</unit>
+                    <description>Downlink station calibration value.; Invalid indicated by value of -1.0.</description>
+                    <Special_Constants>
+                        <invalid_constant>-1.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>meas_rng</name>
@@ -597,7 +641,11 @@
                     <field_location unit="byte">181</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Range Units modulo rng_modulo</unit>
                     <description>Measured range value.  ; Does not include compensation for station calibration and other adjustments.  Invalid is indicated by value of -1.0.</description>
+                    <Special_Constants>
+                        <invalid_constant>-1.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>rng_obs</name>
@@ -605,7 +653,11 @@
                     <field_location unit="byte">189</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
-                    <description>Range observable.; Includes all measurement adjustments (station calibration, time tag adjustments, spacecraft delay, and Z-height). Invalid is indicated by value of ?1.0.</description>
+                    <unit>Range Units modulo rng_modulo</unit>
+                    <description>Range observable.; Includes all measurement adjustments (station calibration, time tag adjustments, spacecraft delay, and Z-height). Invalid is indicated by value of -1.0.</description>
+                    <Special_Constants>
+                        <invalid_constant>-1.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>rng_obs_dl</name>
@@ -613,7 +665,11 @@
                     <field_location unit="byte">197</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Range Units modulo rng_modulo</unit>
                     <description>Downlink range observable.; Includes all measurement adjustments (station calibration, time tag adjustments, spacecraft delay, and Z-height).  A value of -1.0 indicates invalid.</description>
+                    <Special_Constants>
+                        <invalid_constant>-1.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>clock_waveform</name>
@@ -637,6 +693,7 @@
                     <field_location unit="byte">207</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Percentage</unit>
                     <description>Probability of Acquistion. ; Formerly called  Figure of Merit , this is the probability of acquiring the correct range.; </description>
                 </Field_Binary>
                 <Field_Binary>
@@ -645,6 +702,7 @@
                     <field_location unit="byte">211</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Range Units</unit>
                     <description>DRVID.; DRVID measured using phase data from carrier.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -653,6 +711,7 @@
                     <field_location unit="byte">219</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Seconds</unit>
                     <description>Round trip light time.; Predicted value.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -661,7 +720,11 @@
                     <field_location unit="byte">223</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>dB-Hz</unit>
                     <description>Pr/N0.; Ranging power to noise spectral density ratio.</description>
+                    <Special_Constants>
+                        <not_applicable_constant>-300.0</not_applicable_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>transmit_pwr</name>
@@ -669,6 +732,7 @@
                     <field_location unit="byte">227</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>W</unit>
                     <description>Transmitter power.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -693,6 +757,7 @@
                     <field_location unit="byte">233</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Seconds</unit>
                     <description>T1 setting.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -701,6 +766,7 @@
                     <field_location unit="byte">235</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Seconds</unit>
                     <description>T2 setting.  </description>
                 </Field_Binary>
                 <Field_Binary>
@@ -709,6 +775,7 @@
                     <field_location unit="byte">237</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Seconds</unit>
                     <description>T3 setting.  </description>
                 </Field_Binary>
                 <Field_Binary>
@@ -749,6 +816,7 @@
                     <field_location unit="byte">243</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Seconds</unit>
                     <description>Transmit In-phase time.; Offset from time tag of time of zero phase on uplink range signal generation.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -757,6 +825,7 @@
                     <field_location unit="byte">247</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Seconds</unit>
                     <description>Receive In-phase time.; Offset from time tag of time of zero phase on downlink range signal correlation.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -765,6 +834,7 @@
                     <field_location unit="byte">251</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>dB</unit>
                     <description>Carrier suppression by ranging modulation.; Amount carrier power is reduced by ranging modulation.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -789,6 +859,7 @@
                     <field_location unit="byte">263</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Seconds</unit>
                     <description>Range cycle time.; Time, in seconds, of one complete cycle of the ranging signal.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -797,6 +868,7 @@
                     <field_location unit="byte">271</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Range Units</unit>
                     <description>Range modulo value.; Range measurement modulo (ambiguity).</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -821,7 +893,11 @@
                     <field_location unit="byte">283</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Hz</unit>
                     <description>Uplink frequency.  ; Uplink frequency at time tag. Set to 0.0 if unavailable.</description>
+                    <Special_Constants>
+                        <missing_constant>0.0</missing_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>rng_type</name>
@@ -845,7 +921,11 @@
                     <field_location unit="byte">293</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Range Units</unit>
                     <description>Range noise.; Invalid indicated by value of -1.0.</description>
+                    <Special_Constants>
+                        <invalid_constant>-1.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>rng_prefit_resid</name>
@@ -853,6 +933,7 @@
                     <field_location unit="byte">297</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Range Units</unit>
                     <description>Range pre-fit residual.  Observed range minus predicted range.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -861,6 +942,7 @@
                     <field_location unit="byte">305</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Range Units</unit>
                     <description>Downlink range pre-fit residual.; Observed range minus predicted range.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -885,6 +967,7 @@
                     <field_location unit="byte">315</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Range Units</unit>
                     <description>Range residual tolerance value.; Value used for setting Range residual tolerance flag.  Provided by customer.  Applies to both rng_prefit_resid and rng_dl_prefit_resid; not applicable if rng_prefit_resid_vld_flag and rng_dl_prefit_resid_vld_flag are 0.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -893,6 +976,7 @@
                     <field_location unit="byte">319</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Range Units</unit>
                     <description>DRVID tolerance value.; Value used for setting DRVID tolerance flag.  Provided by customer.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -901,6 +985,7 @@
                     <field_location unit="byte">323</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>dB-Hz</unit>
                     <description>Pr/N0 residual tolerance value.; Value used for setting Pr/N0 residual tolerance flag.  Provided by customer.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -909,6 +994,7 @@
                     <field_location unit="byte">327</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Range Units</unit>
                     <description>Range sigma tolerance value.; Value used for setting Range sigma tolerance flag.  Provided by customer.  Not applicable if rng_noise is -1.0.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -917,6 +1003,7 @@
                     <field_location unit="byte">331</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Percentage</unit>
                     <description>Probability of Acquisition tolerance value.; Value used in setting of Range Validity flag.  Provided by customer.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -1008,5 +1095,5 @@
                     <description>Reserved.; Six bytes.</description>
                 </Field_Binary>
 
-            </Record_Binary>         
+            </Record_Binary>
         </Table_Binary>

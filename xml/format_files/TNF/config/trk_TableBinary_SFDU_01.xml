@@ -53,6 +53,7 @@
                     <field_location unit="byte">13</field_location>
                     <data_type>UnsignedMSB8</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Bytes</unit>
                     <description>Length attribute of the tracking data SFDU.; Indicates the length of the data following this element.; DT0 => 162; DT1 => 358 ; DT2 => 194 ; DT3 => 304 ; DT4 => 276 ; DT5 => 388 ; DT6 => 200; DT7 => 330; DT8 => 178 ; DT9 => 124; DT10 => 204 ; DT11 => 182; DT12 => 164 ; DT13 => 160; DT14 => 348; DT15 => 194; DT16 => 182 + 18 * num_obs; DT17 => 194 + 22 * num_obs</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -69,6 +70,7 @@
                     <field_location unit="byte">23</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Bytes</unit>
                     <description>Length attribute of the aggregation CHDO.; Indicates the length of the sum of the primary and secondary CHDOs.; CHDO 132 => 78; CHDO 133 => 122; CHDO 134 => 136; CHDO 135 => 100; CHDO 136 => 110</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -85,6 +87,7 @@
                     <field_location unit="byte">27</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Bytes</unit>
                     <description>Length attribute of the primary CHDO.  Indicates the length, in bytes, of the value field (bytes after this item) of the primary CHDO.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -133,6 +136,7 @@
                     <field_location unit="byte">35</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Bytes</unit>
                     <description>Length attribute of the secondary CHDO.  Indicates the length, in bytes, of the value field (bytes after this item) of the secondary CHDO.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -205,6 +209,7 @@
                     <field_location unit="byte">53</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Seconds</unit>
                     <description>Time tag seconds of day.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -213,6 +218,7 @@
                     <field_location unit="byte">61</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Days</unit>
                     <description>Record creation time days.; Days since 1/1/1958.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -221,6 +227,7 @@
                     <field_location unit="byte">63</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>msec</unit>
                     <description>Record creation time milliseconds of day.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -277,6 +284,7 @@
                     <field_location unit="byte">73</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>seconds</unit>
                     <description>Array delay value.  ; Time delay added to path by arraying equipment.  Obtained from arraying equipment.  Any measurements include this delay.  Valid only if Array Flag (array_flag) is non-zero.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -349,7 +357,11 @@
                     <field_location unit="byte">89</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
-                    <description>Receive time tag delay.  ; Value used to offset downlink time tag (e.g., for Goldstone Beam Waveguide antennas).  A value of ?1.0 indicates invalid (or not provided).</description>
+                    <unit>seconds</unit>
+                    <description>Receive time tag delay.  ; Value used to offset downlink time tag (e.g., for Goldstone Beam Waveguide antennas).  A value of -1.0 indicates invalid (or not provided).</description>
+                    <Special_Constants>
+                        <invalid_constant>-1.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>dl_zheight_corr</name>
@@ -357,7 +369,11 @@
                     <field_location unit="byte">97</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>seconds</unit>
                     <description>Downlink Z-height correction. ; Value of -99.0 indicates invalid.</description>
+                    <Special_Constants>
+                        <invalid_constant>-99.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>vld_ul_stn</name>
@@ -413,7 +429,11 @@
                     <field_location unit="byte">107</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Hz</unit>
                     <description>Spacecraft oscillator frequency.; Spacecraft one?way frequency.; 0.0 if unknown.</description>
+                    <Special_Constants>
+                        <unknown_constant>0.0</unknown_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>scft_transpd_delay</name>
@@ -421,7 +441,11 @@
                     <field_location unit="byte">115</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Seconds</unit>
                     <description>Spacecraft transponder delay.  ; Coherent ranging delay.  Value of ?1.0 indicates invalid.</description>
+                    <Special_Constants>
+                        <invalid_constant>-1.0</invalid_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>scft_transpd_turn_num</name>
@@ -461,6 +485,7 @@
                     <field_location unit="byte">133</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Days</unit>
                     <description>Modification time days.; Days since 1/1/1958.  Last modification time.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -469,6 +494,7 @@
                     <field_location unit="byte">135</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>msec</unit>
                     <description>Modification time milliseconds of day. ; Last modification time.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -525,6 +551,7 @@
                     <field_location unit="byte">149</field_location>
                     <data_type>UnsignedMSB2</data_type>
                     <field_length unit="byte">2</field_length>
+                    <unit>Bytes</unit>
                     <description>Length attribute of the downlink carrier phase data CHDO value field.; Number of bytes after this item.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -533,6 +560,7 @@
                     <field_location unit="byte">151</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Hz</unit>
                     <description>Carrier tracking loop bandwidth.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -541,7 +569,11 @@
                     <field_location unit="byte">155</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
-                    <description>Pc/N0.; Carrier power to noise spectral density ratio.  Has a value of  300.0 if no signal.</description>
+                    <unit>dB-Hz</unit>
+                    <description>Pc/N0.; Carrier power to noise spectral density ratio.  Has a value of -300.0 if no signal.</description>
+                    <Special_Constants>
+                        <not_applicable_constant>-300.0</not_applicable_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>pcn0_resid</name>
@@ -549,7 +581,11 @@
                     <field_location unit="byte">159</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>dB-Hz</unit>
                     <description>Pc/N0 residual.; Actual value minus predicted value.</description>
+                    <Special_Constants>
+                        <not_applicable_constant>-300.0</not_applicable_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>pdn0</name>
@@ -557,7 +593,11 @@
                     <field_location unit="byte">163</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
-                    <description>Pd/N0.; Data power to noise spectral density ratio.  Has a value of  300.0 if no signal.</description>
+                    <unit>dB-Hz</unit>
+                    <description>Pd/N0.; Data power to noise spectral density ratio.  Has a value of -300.0 if no signal.</description>
+                    <Special_Constants>
+                        <not_applicable_constant>-300.0</not_applicable_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>pdn0_resid</name>
@@ -565,7 +605,11 @@
                     <field_location unit="byte">167</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>dB-Hz</unit>
                     <description>Pd/N0 residual.; Actual value minus predicted value.</description>
+                    <Special_Constants>
+                        <not_applicable_constant>-300.0</not_applicable_constant>
+                    </Special_Constants>
                 </Field_Binary>
                 <Field_Binary>
                     <name>system_noise_temp</name>
@@ -573,6 +617,7 @@
                     <field_location unit="byte">171</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>k (degrees kelvin)</unit>
                     <description>System Noise Temperature.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -581,6 +626,7 @@
                     <field_location unit="byte">175</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles divided by 4294967296</unit>
                     <description>Raw phase sample 0   High part phase data whole cycles.; (time tag + 0.0 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -589,6 +635,7 @@
                     <field_location unit="byte">179</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles modulo 4294967296</unit>
                     <description>Raw phase sample 0   Low part phase data whole cycles.; (time tag + 0.0 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -597,6 +644,7 @@
                     <field_location unit="byte">183</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Fractional phase cycles multiplied by 4294967296</unit>
                     <description>Raw phase sample 0   Fractional part phase data cycles.; (time tag + 0.0 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -605,6 +653,7 @@
                     <field_location unit="byte">187</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles divided by 4294967296</unit>
                     <description>Raw phase sample 1   High part phase data whole cycles.; (time tag + 0.1 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -613,6 +662,7 @@
                     <field_location unit="byte">191</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles modulo 4294967296</unit>
                     <description>Raw phase sample 1   Low part phase data whole cycles.; (time tag + 0.1 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -621,6 +671,7 @@
                     <field_location unit="byte">195</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Fractional phase cycles multiplied by 4294967296</unit>
                     <description>Raw phase sample 1   Fractional part phase data cycles.; (time tag + 0.1 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -629,6 +680,7 @@
                     <field_location unit="byte">199</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles divided by 4294967296</unit>
                     <description>Raw phase sample 2   High part phase data whole cycles.; (time tag + 0.2 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -637,6 +689,7 @@
                     <field_location unit="byte">203</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles modulo 4294967296</unit>
                     <description>Raw phase sample 2   Low part phase data whole cycles.; (time tag + 0.2 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -645,6 +698,7 @@
                     <field_location unit="byte">207</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Fractional phase cycles multiplied by 4294967296</unit>
                     <description>Raw phase sample 2   Fractional part phase data cycles.; (time tag + 0.2 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -653,6 +707,7 @@
                     <field_location unit="byte">211</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles divided by 4294967296</unit>
                     <description>Raw phase sample 3   High part phase data whole cycles.; (time tag + 0.3 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -661,6 +716,7 @@
                     <field_location unit="byte">215</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles modulo 4294967296</unit>
                     <description>Raw phase sample 3   Low part phase data whole cycles.; (time tag + 0.3 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -669,6 +725,7 @@
                     <field_location unit="byte">219</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Fractional phase cycles multiplied by 4294967296</unit>
                     <description>Raw phase sample 3   Fractional part phase data cycles.; (time tag + 0.3 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -677,6 +734,7 @@
                     <field_location unit="byte">223</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles divided by 4294967296</unit>
                     <description>Raw phase sample 4   High part phase data whole cycles.; (time tag + 0.4 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -685,6 +743,7 @@
                     <field_location unit="byte">227</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles modulo 4294967296</unit>
                     <description>Raw phase sample 4   Low part phase data whole cycles.; (time tag + 0.4 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -693,6 +752,7 @@
                     <field_location unit="byte">231</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Fractional phase cycles multiplied by 4294967296</unit>
                     <description>Raw phase sample 4   Fractional part phase data cycles.; (time tag + 0.4 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -701,6 +761,7 @@
                     <field_location unit="byte">235</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles divided by 4294967296</unit>
                     <description>Raw phase sample 5   High part phase data whole cycles.; (time tag + 0.5 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -709,6 +770,7 @@
                     <field_location unit="byte">239</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles modulo 4294967296</unit>
                     <description>Raw phase sample 5   Low part phase data whole cycles.; (time tag + 0.5 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -717,6 +779,7 @@
                     <field_location unit="byte">243</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Fractional phase cycles multiplied by 4294967296</unit>
                     <description>Raw phase sample 5   Fractional part phase data cycles.; (time tag + 0.5 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -725,6 +788,7 @@
                     <field_location unit="byte">247</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles divided by 4294967296</unit>
                     <description>Raw phase sample 6   High part phase data whole cycles.; (time tag + 0.6 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -733,6 +797,7 @@
                     <field_location unit="byte">251</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles modulo 4294967296</unit>
                     <description>Raw phase sample 6   Low part phase data whole cycles.; (time tag + 0.6 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -741,6 +806,7 @@
                     <field_location unit="byte">255</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Fractional phase cycles multiplied by 4294967296</unit>
                     <description>Raw phase sample 6   Fractional part phase data cycles.; (time tag + 0.6 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -749,6 +815,7 @@
                     <field_location unit="byte">259</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles divided by 4294967296</unit>
                     <description>Raw phase sample 7   High part phase data whole cycles.; (time tag + 0.7 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -757,6 +824,7 @@
                     <field_location unit="byte">263</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles modulo 4294967296</unit>
                     <description>Raw phase sample 7   Low part phase data whole cycles.; (time tag + 0.7 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -765,6 +833,7 @@
                     <field_location unit="byte">267</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Fractional phase cycles multiplied by 4294967296</unit>
                     <description>Raw phase sample 7   Fractional part phase data cycles; (time tag + 0.7 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -773,6 +842,7 @@
                     <field_location unit="byte">271</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles divided by 4294967296</unit>
                     <description>Raw phase sample 8   High part phase data whole cycles.; (time tag + 0.8 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -781,6 +851,7 @@
                     <field_location unit="byte">275</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles modulo 4294967296</unit>
                     <description>Raw phase sample 8   Low part phase data whole cycles.; (time tag + 0.8 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -789,6 +860,7 @@
                     <field_location unit="byte">279</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Fractional phase cycles multiplied by 4294967296</unit>
                     <description>Raw phase sample 8   Fractional part phase data cycles.; (time tag + 0.8 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -797,6 +869,7 @@
                     <field_location unit="byte">283</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles divided by 4294967296</unit>
                     <description>Raw phase sample 9   High part phase data whole cycles.; (time tag + 0.9 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -805,6 +878,7 @@
                     <field_location unit="byte">287</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles modulo 4294967296</unit>
                     <description>Raw phase sample 9   Low part phase data whole cycles.; (time tag + 0.9 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -813,6 +887,7 @@
                     <field_location unit="byte">291</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Fractional phase cycles multiplied by 4294967296</unit>
                     <description>Raw phase sample 9   Fractional part phase data cycles.; (time tag + 0.9 sec)</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -821,6 +896,7 @@
                     <field_location unit="byte">295</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles divided by 4294967296</unit>
                     <description>Averaged phase sample   High part phase data whole cycles.; One-second average, centered around time tag.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -829,6 +905,7 @@
                     <field_location unit="byte">299</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Total integer phase cycles modulo 4294967296</unit>
                     <description>Averaged phase sample   Low part phase data whole cycles.; One-second average, centered around time tag.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -837,6 +914,7 @@
                     <field_location unit="byte">303</field_location>
                     <data_type>UnsignedMSB4</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Fractional phase cycles multiplied by 4294967296</unit>
                     <description>Averaged phase sample   Fractional part phase data cycles.; One-second average, centered around time tag.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -845,6 +923,7 @@
                     <field_location unit="byte">307</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Sky level Hz</unit>
                     <description>Downlink frequency. ; Frequency at the time tag.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -853,6 +932,7 @@
                     <field_location unit="byte">315</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Sky level Hz</unit>
                     <description>Doppler residual. ; Negative of frequency residual.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -861,6 +941,7 @@
                     <field_location unit="byte">319</field_location>
                     <data_type>IEEE754MSBSingle</data_type>
                     <field_length unit="byte">4</field_length>
+                    <unit>Hz</unit>
                     <description>Doppler noise.  ; Averaged over 10 points in record.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -917,6 +998,7 @@
                     <field_location unit="byte">349</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Seconds</unit>
                     <description>Predicts time offset.; Seconds added to current time.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -925,6 +1007,7 @@
                     <field_location unit="byte">357</field_location>
                     <data_type>IEEE754MSBDouble</data_type>
                     <field_length unit="byte">8</field_length>
+                    <unit>Hz</unit>
                     <description>Predicts frequency offset. ; Hz added to predicted value.</description>
                 </Field_Binary>
                 <Field_Binary>
@@ -984,5 +1067,5 @@
                     <description>Reserved.; Eight bytes.</description>
                 </Field_Binary>
 
-            </Record_Binary>         
+            </Record_Binary>
         </Table_Binary>
